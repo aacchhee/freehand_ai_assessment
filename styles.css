@@ -1,0 +1,8 @@
+/* Compact numeric answer fields. */
+.math-exercise-cell[data-mode="numeric"] input.math-input:not(.math-mat-cell) { width: 12ch; }
+details > summary { cursor: pointer; font-weight: 600; }
+details[open] > summary { margin-bottom: .8rem; }
+button:focus-visible, summary:focus-visible { outline: 3px solid #ad6600; outline-offset: 3px; }
+/* Language switch between the English and bokmål twin pages. */
+.language-switch { text-align: right; font-size: .95em; margin: -.5rem 0 1rem; }
+.language-switch p { margin: 0; }
