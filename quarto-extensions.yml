@@ -1,0 +1,6 @@
+# CTM Assessment owns the component manifest and its temporary Pyodide pin.
+plugins:
+- name: ctm-assessment
+  repo: https://github.com/Erasmus-CTM/ctm-assessment.git
+  ref: 8a8020d1c4aee4ba21c3eb4dd2b3d8877339fe78
+  path: _extensions/ctm-assessment

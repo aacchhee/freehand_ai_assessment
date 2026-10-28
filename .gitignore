@@ -1,0 +1,8 @@
+/_site/
+/.quarto/
+/_extensions/
+/.private-extensions/
+/.venv/
+__pycache__/
+*.pyc
+**/*.quarto_ipynb

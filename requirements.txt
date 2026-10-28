@@ -1,0 +1,3 @@
+PyYAML>=6
+sympy>=1.13  # CTM Assessment's build; the browser uses Pyodide's SymPy
+networkx>=3.4  # CTM Assessment's checker build
