@@ -14,7 +14,9 @@ How large is the resistance $R_2$?
 #| field-labels: Resistance R2 in ohm
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg6a
+#| harder: Give the total power from the source and the voltage across R1 instead of the current.
+#| simpler: Give the voltage across R2 and the current.
 
 $R_2=$ __[(230-150)/10] Ω
 ```
@@ -40,7 +42,9 @@ the surroundings.
 #| field-labels: Time in s
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg6b
+#| harder: Say that only a stated percentage of the electric energy heats the water, and give the amount of water as a volume in litres.
+#| simpler: Give the heating power in W and the mass of water in kg.
 
 $t=$ __[0.5*4180*56/1500] s
 ```

@@ -163,7 +163,9 @@
   }
   function answerFields(activity) {
     const cell = document.querySelector('.math-exercise-cell[data-label="' + activity.id + '-svar"]');
-    return cell ? {cell, inputs: [...cell.querySelectorAll('input.math-input')]} : null;
+    // Not the inputs of generated practice problems inside the same cell.
+    return cell ? {cell, inputs: [...cell.querySelectorAll('input.math-input')]
+      .filter(input => !input.closest('.math-generated-problem'))} : null;
   }
   function setAnswers(activity, values) {
     const fields = answerFields(activity);

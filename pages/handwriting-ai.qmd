@@ -5,13 +5,16 @@ lang: en
 toc: false
 math-exercise:
   lang: en
-  feedback: false
 ai-feedback:
+  similar: true
   policy-files:
+    - feedback/handwriting/practice.yml
     - feedback/handwriting/tutor.yml
     - feedback/handwriting/tasks.yml
   policy:
     default: handwriting
+  generation-policy:
+    default: physics-practice
 include-after-body:
   - text: |
       <script src="../assets/handskrift/js-yaml.min.js"></script>

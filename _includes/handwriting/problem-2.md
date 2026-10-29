@@ -13,7 +13,9 @@ At which wavelength is the spectral radiant exitance of the star largest?
 #| field-labels: Wavelength in nm
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg2
+#| harder: Give the temperature only through the radiant exitance in W/m², so the student first uses Stefan–Boltzmann's law and then Wien's law.
+#| simpler: Give the surface temperature in kelvin.
 
 $\lambda_\mathrm{max}=$ __[2.898e-3/6373*1e9] nm
 ```
@@ -32,7 +34,9 @@ Calculate the surface area of the star.
 #| field-labels: Surface area in m²
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg2
+#| harder: Give the temperature only through the wavelength of maximum radiation in nm, so the student first uses Wien's law.
+#| simpler: Give the surface temperature in kelvin and the radiant exitance in W/m², so the area is power divided by exitance.
 
 Write for example `4.5*10^12`. $A=$ __[3.93e26/(5.67e-8*6373**4)] m²
 ```

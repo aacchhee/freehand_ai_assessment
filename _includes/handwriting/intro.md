@@ -13,7 +13,11 @@ is available too. For each subtask you can
    an explanation, then the method and finally a worked solution.
    The **Feedback language** menu next to each upload field chooses the
    language the AI answers in (English, Norwegian, Swedish, Spanish, Russian
-   or German) for that subtask only.
+   or German) for that subtask only;
+3. practise more with **Similar problem** under an answer field: **Easier**,
+   **Harder** or **Another one like this** makes a new problem about the same
+   physics, checked the same way. Practice problems never count as answers to
+   the exam. This needs a direct API with a reasoning model in the settings ⚙.
 
 The feedback comes from an AI model you choose yourself under the gear ⚙
 (direct API with your own key, or “copy prompt” to an AI chat). The model must
