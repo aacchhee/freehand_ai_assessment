@@ -254,6 +254,7 @@ window.Quarto = {
   <li><a href="#change-what-the-ai-knows-about-one-subtask" id="toc-change-what-the-ai-knows-about-one-subtask" class="nav-link" data-scroll-target="#change-what-the-ai-knows-about-one-subtask">Change what the AI knows about one subtask</a></li>
   <li><a href="#add-an-answer" id="toc-add-an-answer" class="nav-link" data-scroll-target="#add-an-answer">Add an answer</a></li>
   </ul></li>
+  <li><a href="#similar-problems" id="toc-similar-problems" class="nav-link" data-scroll-target="#similar-problems">Similar problems</a></li>
   <li><a href="#the-logarithms-page" id="toc-the-logarithms-page" class="nav-link" data-scroll-target="#the-logarithms-page">The logarithms page</a></li>
   <li><a href="#yaml-pitfalls" id="toc-yaml-pitfalls" class="nav-link" data-scroll-target="#yaml-pitfalls">YAML pitfalls</a></li>
   <li><a href="#benchmark-routine" id="toc-benchmark-routine" class="nav-link" data-scroll-target="#benchmark-routine">Benchmark routine</a></li>
@@ -525,6 +526,33 @@ A subtask can also get its own settings, for example shorter answers:"><pre clas
 <h3 class="anchored" data-anchor-id="add-an-answer">Add an answer</h3>
 <p>Put a photo in <code>assets/handskrift/student1/</code> or <code>student2/</code> named after the subtask (<code>1b.png</code>). If one subtask has several photos, they are called <code>1b.png</code>, <code>1b-2.png</code> and <code>1b-3.png</code>. The fill-in button finds the photo automatically, on both pages. The final values filled into the answer fields are in <code>assets/handskrift/answers.json</code>.</p>
 </section>
+</section>
+<section id="similar-problems" class="level2">
+<h2 class="anchored" data-anchor-id="similar-problems">Similar problems</h2>
+<p>On the English physics page every answer field has <strong>Similar problem</strong> with <strong>Easier</strong>, <strong>Harder</strong> and <strong>Another one like this</strong>. The AI writes a new problem; the answer field checks it with the same mode and tolerance. Three places control what it writes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Where</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/handwriting/practice.yml"><code>feedback/handwriting/practice.yml</code></a>, policy <code>physics-practice</code></td>
+<td>The common rules for every generated problem (realistic values, SI units, the same quantities as the original), and what <em>harder</em>, <em>easier</em> and <em>same</em> mean in general</td>
+</tr>
+<tr class="even">
+<td><code>#| harder:</code> and <code>#| simpler:</code> in each answer field in <code>_includes/handwriting/problem-N.md</code></td>
+<td>What harder and simpler mean for that subtask, for example “give the spring constant and the compression instead of the launch speed”</td>
+</tr>
+<tr class="odd">
+<td><code>#| context:</code> in the same answer field</td>
+<td>Which problem text the AI gets (the problem’s <code>.ai-context</code> block and the subtask’s own text)</td>
+</tr>
+</tbody>
+</table>
+<p>The photo feedback does not use <code>practice.yml</code>, and the generation does not use <code>tutor.yml</code> or <code>tasks.yml</code>. The answer fields also have a <strong>Feedback</strong> button for the typed answer; it uses <code>tutor.yml</code> like the photo feedback. A good direction asks for one more (or one less) reasoning step and keeps the answer fields: the same quantities in the same units. Generation needs a direct API with a reasoning model (Generation model in the settings ⚙).</p>
 </section>
 <section id="the-logarithms-page" class="level2">
 <h2 class="anchored" data-anchor-id="the-logarithms-page">The logarithms page</h2>
