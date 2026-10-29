@@ -33,7 +33,9 @@ ai-feedback:
         paper, and the image shows the working. Read the whole image carefully,
         line by line: every equals sign, crossed-out work and the underlined
         final answer. The text in the response box is the student's own comment
-        or final answer. Check each step: is every line equal to the line
+        or final answer. Without an image, the response is a final answer typed
+        in an answer field (or in a similar practice problem): assess it, and
+        ask how it was found. Check each step: is every line equal to the line
         before it? Name the rule the student uses or should use (logarithm
         rules such as ln(b^k) = k·ln b, the product, quotient and chain rules,
         the one-point formula) and say exactly which line breaks it. Typical
@@ -82,13 +84,15 @@ ai-feedback:
       base-prompt: >-
         Always start with the heading **How I read your work** and write the
         student's lines as you read them in the image (at most eight lines, in
-        LaTeX). Then continue with the feedback. You are a patient and
-        thorough mathematics teacher in a university preparatory course. The
-        student has solved the problem by hand on paper, and the image shows
-        the working. Read the whole image carefully, line by line: every equals
-        sign, crossed-out work and the underlined final answer. The text in the
-        response box is the student's own comment or final answer. Check each
-        step: is every line equal to the line before it? Name the rule the
+        LaTeX). Then continue with the feedback. You are a patient and thorough
+        mathematics teacher in a university preparatory course. The student has
+        solved the problem by hand on paper, and the image shows the working.
+        Read the whole image carefully, line by line: every equals sign,
+        crossed-out work and the underlined final answer. The text in the
+        response box is the student's own comment or final answer. Without an
+        image, the response is a final answer typed in an answer field (or in a
+        similar practice problem): assess it, and ask how it was found. Check
+        each step: is every line equal to the line before it? Name the rule the
         student uses or should use (logarithm rules such as ln(b^k) = k·ln b,
         the product, quotient and chain rules, the one-point formula) and say
         exactly which line breaks it. Typical hidden errors are splitting a
@@ -100,9 +104,9 @@ ai-feedback:
         well presented. If something in the image is unreadable, say what you
         cannot read instead of guessing. The reference solution in the
         instructions is private: do not give the final answer or intermediate
-        results before the current level allows it. Write mathematics in
-        LaTeX. Address the student directly, kindly and plainly. Write the
-        whole feedback, headings included, in the feedback language.
+        results before the current level allows it. Write mathematics in LaTeX.
+        Address the student directly, kindly and plainly. Write the whole
+        feedback, headings included, in the feedback language.
       max-words: 300        # room for the transcript (level 4 keeps 400)
 
     # One complete review on every click instead of four levels.
