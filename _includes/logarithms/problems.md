@@ -13,9 +13,8 @@ $$\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}$$
 #| field-labels: Simplified expression
 #| mode: custom
 #| context: v24-oppg1b
-#| variables: |
+#| givens: |
 #|   expr = (a*log(b) - log(b**2))/((a - 2)*log(sqrt(b)))
-#| variants: 1
 #| similar-data: expr
 #| harder: An expression that needs three logarithm rules (a power, a root and a product or quotient inside the logarithms) and still simplifies to a number or one short term.
 #| simpler: A quotient that needs one rule, for example a power inside one logarithm.
@@ -88,9 +87,8 @@ $$g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)$$
 #| field-labels: Derivative
 #| mode: custom
 #| context: v24-oppg3b
-#| variables: |
+#| givens: |
 #|   g = log(2*x**2 - 2*x**4)/2
-#| variants: 1
 #| similar-data: g
 #| harder: The logarithm of a product or quotient, or a factor x in front of the logarithm, so the chain rule and the product or quotient rule are both needed; the derivative still simplifies to one fraction.
 #| simpler: The logarithm of a linear or simple quadratic inner function, without a constant factor.
@@ -186,10 +184,9 @@ through the point $\left(e,h(e)\right)$. Give the answer with exact values.
 #| field-labels: Tangent
 #| mode: custom
 #| context: v24-oppg3c
-#| variables: |
+#| givens: |
 #|   h = x*log(x)
 #|   x0 = E
-#| variants: 1
 #| similar-data: h, x0
 #| harder: A function such as x²·ln x or ln(x²+1) at a point where the value and the slope are exact but not whole numbers.
 #| simpler: h(x) = ln x or a power of x, at a point such as x = 1 or x = e.
