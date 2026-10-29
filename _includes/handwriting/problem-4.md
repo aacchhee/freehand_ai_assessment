@@ -39,9 +39,7 @@ $k=$ __[0.057*3**2/0.05**2] N/m
 #| harder: Give the spring constant and the compression instead of the launch speed, so the speed must be found from energy conservation first.
 #| simpler: Give the time of fall instead of the table height.
 
-Assume that the ball rolls without change of speed from leaving the spring
-until it reaches the edge of the table. How far does the ball move
-horizontally from the edge of the table until it lands?
+Assume that the ball rolls without change of speed from leaving the spring until it reaches the edge of the table. How far does the ball move horizontally from the edge of the table until it lands?
 
 $x=$ __[3*sqrt(2*1.4/9.81)] m
 ```
@@ -61,8 +59,7 @@ $x=$ __[3*sqrt(2*1.4/9.81)] m
 #| harder: Give the spring constant and the compression instead of the launch speed, so the horizontal speed must be found from the spring energy before the vertical velocity.
 #| simpler: Ask for the vertical velocity just before the ball hits the ground.
 
-How large is the velocity in the vertical direction when the kinetic energy of
-the ball is $480\,\mathrm{mJ}$?
+How large is the velocity in the vertical direction when the kinetic energy of the ball is $480\,\mathrm{mJ}$?
 
 $v_y=$ __[sqrt(2*0.48/0.057-9)] m/s
 ```

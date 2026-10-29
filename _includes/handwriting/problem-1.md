@@ -14,8 +14,7 @@ ground. The initial speed of the ball is $6.0\,\mathrm{m/s}$.
 #| harder: Give the ball's speed at a stated height above the launch point instead of the launch speed, so the launch speed must be found first. Still ask for the time to the top and the height above the ground.
 #| simpler: Throw the ball from ground level, so the height above the ground is just the rise. Still ask for the time and the height.
 
-How long does it take until the ball is at its highest point? How high above
-the ground is it then?
+How long does it take until the ball is at its highest point? How high above the ground is it then?
 
 $t=$ __[6.0/9.81] s, $h=$ __[1.5+36/(2*9.81)] m
 ```
@@ -44,8 +43,7 @@ lands.
 #| harder: Ask for the change after a time when the ball is below the launch point, so the change is negative and the sign matters.
 #| simpler: Ask for the change between the launch and the highest point, and give the mass in kilograms.
 
-The mass of the ball is $450\,\mathrm{g}$. How large is the change in the
-ball's potential energy during the first second?
+The mass of the ball is $450\,\mathrm{g}$. How large is the change in the ball's potential energy during the first second?
 
 $\Delta E_p=$ __[0.450*9.81*(6.0-9.81/2)] J
 ```

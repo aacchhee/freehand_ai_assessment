@@ -17,8 +17,7 @@ $$
 #| harder: Use a reaction with heavier nuclei, for example neutron capture or fission with two named products and one unknown particle.
 #| simpler: Use an alpha or beta decay with one unknown product.
 
-What is the unknown particle ${}^{A}_{B}\mathrm{X}$? Is the reaction fusion or
-fission? Justify your answer.
+What is the unknown particle ${}^{A}_{B}\mathrm{X}$? Is the reaction fusion or fission? Justify your answer.
 
 $A=$ __[1], $B=$ __[0]
 ```

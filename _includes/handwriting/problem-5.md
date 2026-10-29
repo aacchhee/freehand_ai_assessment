@@ -35,8 +35,7 @@ $V=$ __[0.450/(0.8*0.87)] dm³
 #| harder: Put a layer of another liquid with known thickness and density on top, and ask for the depth where the total pressure reaches a stated value.
 #| simpler: Use water and ask for the depth where the pressure from the water alone is a stated value in Pa.
 
-At which depth has the pressure in the liquid doubled, compared with normal air
-pressure ($101\,\mathrm{kPa}$) at the surface of the liquid?
+At which depth has the pressure in the liquid doubled, compared with normal air pressure ($101\,\mathrm{kPa}$) at the surface of the liquid?
 
 $h=$ __[101e3/(870*9.81)] m
 ```

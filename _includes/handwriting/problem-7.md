@@ -13,8 +13,7 @@ A photon has the wavelength $560\,\mathrm{nm}$.
 #| harder: Give the wavelength in another unit (μm or pm) or give the photon's momentum instead of its wavelength.
 #| simpler: Give the wavelength in metres in standard form.
 
-Calculate the frequency and the energy of a photon with wavelength
-$560\,\mathrm{nm}$.
+Calculate the frequency and the energy of a photon with wavelength $560\,\mathrm{nm}$.
 
 Write for example `4.5*10^12`. $f=$ __[3.00e8/560e-9] Hz,
 $E=$ __[6.626e-34*3.00e8/560e-9] J
@@ -35,8 +34,7 @@ $E=$ __[6.626e-34*3.00e8/560e-9] J
 #| harder: Give the electric power and an efficiency, so only part of the power is emitted as light of this wavelength.
 #| simpler: Give the energy of one photon in J.
 
-A $60\,\mathrm{W}$ lamp emits monochromatic light with wavelength
-$560\,\mathrm{nm}$. How many photons does the lamp emit per second?
+A $60\,\mathrm{W}$ lamp emits monochromatic light with wavelength $560\,\mathrm{nm}$. How many photons does the lamp emit per second?
 
 $N=$ __[60/(6.626e-34*3.00e8/560e-9)] per second
 ```

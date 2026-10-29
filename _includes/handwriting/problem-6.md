@@ -40,9 +40,7 @@ $U_1=150\,\mathrm{V}$ and the current is $10\,\mathrm{A}$.)
 #| harder: Say that only a stated percentage of the electric energy heats the water, and give the amount of water as a volume in litres.
 #| simpler: Give the heating power in W and the mass of water in kg.
 
-How long does it take to heat $5.0\,\mathrm{dl}$ of water from
-$4.0\,^\circ\mathrm{C}$ to $60.0\,^\circ\mathrm{C}$? Assume that no heat goes to
-the surroundings.
+How long does it take to heat $5.0\,\mathrm{dl}$ of water from $4.0\,^\circ\mathrm{C}$ to $60.0\,^\circ\mathrm{C}$? Assume that no heat goes to the surroundings.
 
 $t=$ __[0.5*4180*56/1500] s
 ```
