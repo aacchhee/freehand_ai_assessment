@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Logarithms and AI – Freehand AI assessment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f6725ec72a40a9c11b774886aa13be2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/ctm-coi-frame-startup-1/coi-frame-startup.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-assets-0.9.0/assets.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-locale-0.9.0/ctm-locale.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-locale-0.9.0/common.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-locale-ui-0.9.0/ui.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-layout-0.9.0/ctm-layout.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-layout-0.9.0/ctm-settings.js"></script>
+<link href="../site_libs/quarto-contrib/ctm-layout-0.9.0/ctm-ui.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/ai-feedback-0.9.0/feedback-core.js"></script>
+<script src="../site_libs/quarto-contrib/ai-feedback-0.9.0/feedback-dom.js"></script>
+<script src="../site_libs/quarto-contrib/ai-feedback-0.9.0/ai-feedback.js"></script>
+<link href="../site_libs/quarto-contrib/ai-feedback-0.9.0/ai-feedback.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/ctm-runtime-0.9.0/pyodide-runtime.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-worker-0.9.0/pyodide-worker.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-checkers-0.12.0.dev0+21ac0fe7/ctm-checkers.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-locale-math-exercise-0.9.0/math-exercise.js"></script>
+<link href="../site_libs/quarto-contrib/ctm-matrix-input-0.9.0/ctm-matrix-input.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/math-exercise-0.11.0/math-exercise.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/ctm-ui-0.9.0/ctm-ui.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/ctm-copy-0.9.0/ctm-copy.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-store-0.9.0/ctm-store.js"></script>
+<script src="../site_libs/quarto-contrib/ctm-export-0.9.0/ctm-export.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>globalThis.CTM_ASSETS={"bases":{"font-awesome":"https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/","jsxgraph":"https://cdn.jsdelivr.net/npm/jsxgraph@1.14.2/","katex":"https://cdn.jsdelivr.net/npm/katex@0.16.47/","mathjax-newcm-font":"https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font@4.1.3/","mathjax3":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/","mathjax4":"https://cdn.jsdelivr.net/npm/mathjax@4.1.3/","monaco-editor":"https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/","pyodide":"https://cdn.jsdelivr.net/pyodide/v0.28.3/full/","source-sans-pro":"https://cdn.jsdelivr.net/npm/@fontsource/source-sans-pro@5.3.0/"},"mode":"cdn","v":1};</script>
+<script src="../coi-serviceworker.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/logarithms-ai.html">Mathematics: logarithms V24</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Freehand AI assessment</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/handwriting-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physics: practice exam V2025</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logarithms-ai.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Mathematics: logarithms V24</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/handwriting-ai-prompts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Playing with the prompts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bokmål</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/handskrift-ki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fysikk: prøveeksamen V2025</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logaritmer-ki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matematikk: logaritmer V24</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/handskrift-ki-prompter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spill med promptene</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<script>window.__aiFeedbackPolicies = {"layers":[{"policies":{"logarithms":{"language":"English","max-words":220,"max-issues":3,"allow-full-solution":false,"base-prompt":"You are a patient and thorough mathematics teacher in a university preparatory course. The student has solved the problem by hand on paper, and the image shows the working. Read the whole image carefully, line by line: every equals sign, crossed-out work and the underlined final answer. The text in the response box is the student's own comment or final answer. Check each step: is every line equal to the line before it? Name the rule the student uses or should use (logarithm rules such as ln(b^k) = k·ln b, the product, quotient and chain rules, the one-point formula) and say exactly which line breaks it. Typical hidden errors are splitting a fraction term by term, moving a factor into a logarithm that does not belong there, and forgetting the inner derivative. Check that the answer is as simple as the problem asks and uses exact values when asked. The feedback must be instructive: explain the mathematics, not only whether something is right or wrong. Praise what is correct and well presented. If something in the image is unreadable, say what you cannot read instead of guessing. The reference solution in the instructions is private: do not give the final answer or intermediate results before the current level allows it. Write mathematics in LaTeX. Address the student directly, kindly and plainly. Write the whole feedback, headings included, in the feedback language.","steps":[{"step-prompt":"Level 1, assessment. Answer in three short parts with the headings **What is good**, **What to look at** and **Next step**. Point to the first line that is wrong or the step that is missing, but do not explain how to fix it and do not give correct expressions. End with one question that helps the student find the mistake themselves. If everything is correct, say so clearly and give one tip on the presentation."},{"step-prompt":"Level 2, explanation. Explain why the line or step is wrong: state the rule that applies, in general form, and show with a small example of your own (not this problem) how the rule works. Do not carry out the step for this problem and do not give the answer."},{"step-prompt":"Level 3, method. Describe the correct method in numbered steps: which rule to use in which order, and which parts of this problem go where. Show at most the first step on this problem's expression. Say which line of the student's solution must be redone."},{"step-prompt":"Level 4, worked solution. Give a complete worked solution, one rule per line, with the final answer. End with a short comparison with the student's solution: where did the paths split, and what should the student remember for the exam?","allow-full-solution":true,"max-words":400}]},"logarithms-with-transcript":{"extends":"logarithms","base-prompt":"Always start with the heading **How I read your work** and write the student's lines as you read them in the image (at most eight lines, in LaTeX). Then continue with the feedback. You are a patient and thorough mathematics teacher in a university preparatory course. The student has solved the problem by hand on paper, and the image shows the working. Read the whole image carefully, line by line: every equals sign, crossed-out work and the underlined final answer. The text in the response box is the student's own comment or final answer. Check each step: is every line equal to the line before it? Name the rule the student uses or should use (logarithm rules such as ln(b^k) = k·ln b, the product, quotient and chain rules, the one-point formula) and say exactly which line breaks it. Typical hidden errors are splitting a fraction term by term, moving a factor into a logarithm that does not belong there, and forgetting the inner derivative. Check that the answer is as simple as the problem asks and uses exact values when asked. The feedback must be instructive: explain the mathematics, not only whether something is right or wrong. Praise what is correct and well presented. If something in the image is unreadable, say what you cannot read instead of guessing. The reference solution in the instructions is private: do not give the final answer or intermediate results before the current level allows it. Write mathematics in LaTeX. Address the student directly, kindly and plainly. Write the whole feedback, headings included, in the feedback language.","max-words":300},"logarithms-review":{"extends":"logarithms","max-words":280,"steps":[{"step-prompt":"Answer in three parts with the headings **What is good**, **Mistakes and gaps** and **What to change**. For each mistake name the line and the rule, and say what must change, but do not give a complete worked solution."}]}}},{"exercises":{"plain-text":{"v24-1b":{"base-prompt":"Reference: ln b² = 2 ln b and ln √b = ½ ln b. The numerator is a·ln b − 2 ln b = (a − 2)·ln b, the denominator (a − 2)·½ ln b. The common factor (a − 2)·ln b cancels, and the expression equals 1/(½) = 2 (for b \u003e 0, b ≠ 1 and a ≠ 2). \"As simply as possible\" means the number 2. Typical mistakes: splitting the fraction term by term (dividing a·ln b and 2 ln b separately by the two terms of the denominator); writing a·ln b as ln(ab), or a·ln b − ln b² as a·ln(b/b²); stopping at an equivalent but unsimplified form such as (a − 2)/(½a − 1); multiplying only the numerator by 2 in the last step; expanding (a − 2)·ln √b and losing the factor structure."},"v24-3b":{"base-prompt":"Reference: chain rule with u = 2x² − 2x⁴ and u′ = 4x − 8x³. g′(x) = ½ · u′/u = ½ · (4x − 8x³)/(2x² − 2x⁴) = (2x − 4x³)/(2x² − 2x⁴). Cancel 2x: g′(x) = (1 − 2x²)/(x − x³) = (1 − 2x²)/(x(1 − x)(1 + x)). Alternative: g(x) = ½ ln 2 + ln|x| + ½ ln(1 − x²) gives 1/x − x/(1 − x²), which is the same. The domain is 0 \u003c |x| \u003c 1. Typical mistakes: forgetting the inner derivative, so g′ = ½·1/u; writing u′ alone, so g′ = 2x − 4x³; using the product rule on ½·ln u with a wrong derivative of ln u (1/u′ instead of u′/u); multiplying the function by 2 to remove the ½ (that changes the function); dividing by 2x instead of by the inner function; not cancelling the common factor 2x at the end."},"v24-3c":{"base-prompt":"Reference: h(e) = e·ln e = e, so the point is (e, e). Product rule: h′(x) = 1·ln x + x·(1/x) = ln x + 1, so the slope is h′(e) = 2. One- point formula: y − e = 2(x − e), so y = 2x − e. \"Exact values\" means e, not 2.718…. Typical mistakes: a sign error in the product rule (ln x − 1, slope 0); writing the second term of the product rule as 1/x instead of x·(1/x) = 1; arithmetic such as 1 + 1/e = 3/e; using decimal values for e; forgetting to add e when solving for y."}}}}],"pageLayers":[],"projectPolicy":{"default":"logarithms"}};</script>
+<script>window.__aiFeedbackConfig = {"baseUrl":"","mode":"api","model":""};</script>
+<script>window.__mathExerciseConfig = {"lang":"en","stopAfter":20};</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Logarithms and AI</h1>
+<p class="subtitle lead">Exam V24 in mathematics, problems 1b, 3b and 3c: work on paper, upload the photo, get feedback</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--ctm-save-generated--><div class="ctm-save-bar" role="region" aria-label="Saved answers" hidden=""><p class="ctm-save-notice">Your answers are saved only in this browser.</p><div class="ctm-save-actions"><button type="button" data-ctm-save-toggle="">Do not save on this device</button>
+<button type="button" data-ctm-export="">Export my answers</button>
+<button type="button" data-ctm-clear-page="">Delete answers on this page</button>
+<button type="button" data-ctm-clear-course="">Delete all your answers in this course</button></div><span class="ctm-save-status" role="status" aria-live="polite"></span></div>
+<div class="language-switch">
+<p>🌐 <strong>English</strong> · <a href="../pages/logaritmer-ki.html">Norsk bokmål</a></p>
+</div>
+<p>Three problems on logarithms from the mathematics exam V24. Solve them on paper. For each problem you can</p>
+<ol type="1">
+<li>write the final answer in the answer field and choose <strong>Check</strong>. Write <code>ln(b)</code>, <code>sqrt(b)</code>, <code>x^2</code> and <code>e</code> for Euler’s number; <code>2x</code> means <span class="math inline">\(2\cdot x\)</span>. The check says whether the answer is right and as simple as the problem asks;</li>
+<li>take a photo of your working, upload it under <strong>Upload images</strong> and choose <strong>Feedback</strong>. Each new click gives a deeper hint: first an assessment, then an explanation, then the method and finally a worked solution. The <strong>Feedback language</strong> menu next to each upload field chooses the language the AI answers in for that problem only.</li>
+</ol>
+<p>The feedback comes from an AI model you choose yourself under the gear ⚙ (direct API with your own key, or “copy prompt” to an AI chat). The model must be able to read images. The image and the problem text are sent to the provider you choose. The AI can be wrong: read the feedback critically.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For teachers: test with real answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Load student 1–9</strong> loads real, anonymised answers from nine students (handwritten in Norwegian), with the photo and the final answer, so you do not have to upload anything. All nine answered 1b, seven answered 3b and six answered 3c; a greyed-out number means that student did not answer. The buttons at the top load every problem at once. This page has its own prompts, separate from the physics page; see <a href="../pages/handwriting-ai-prompts.html#the-logarithms-page">Playing with the prompts</a>. The prompt sandbox at the bottom of the page lets you try changes without rebuilding the site.</p>
+</div>
+</div>
+</div>
+<div id="fyll-inn-verktoy">
+
+</div>
+<section id="problem-1b-simplifying" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1b-simplifying">Problem 1b: Simplifying</h2>
+<div id="v24-oppg1b" class="ai-context">
+<p>Write as simply as possible:</p>
+<p><span data-ai-feedback-tex="\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}" data-ai-feedback-display="true"><span class="math display">\[\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}\]</span></span></p>
+</div>
+<div class="math-exercise-cell" data-similar="false" data-similar-guidance="[]" data-generation-policy="[]" id="math-exercise-1" data-label="v24-1b-svar" data-mode="custom" data-reject="" data-vars="a, b" data-tolerance="" data-decplaces="" data-sigfigs="" data-form="" data-checker="&quot;T = {\n    \&quot;right\&quot;: \&quot;Correct, and as simple as possible.\&quot;,\n    \&quot;simplify\&quot;: \&quot;Your expression is equal to the original one, but it can be simplified further. Look for a common factor in the numerator and the denominator.\&quot;,\n    \&quot;wrong\&quot;: \&quot;This is not equal to the original expression. Check the logarithm rules: both ln b² and ln √b can be written with ln b, and a·ln b is not ln(ab).\&quot;,\n}\ndef check(response, symbols):\n    a, b = symbols[\&quot;a\&quot;], symbols[\&quot;b\&quot;]\n    f = response[\&quot;expressions\&quot;][0]\n    points = [(3, 5), (Rational(1, 2), 7), (5, Rational(3, 10)), (-Rational(3, 2), Rational(5, 2)), (7, 11)]\n    try:\n        equal = f.free_symbols <= {a, b} and all(\n            abs(N(f.subs({a: p, b: q}) - 2)) < 1e-9 for p, q in points)\n    except (TypeError, ValueError, ZeroDivisionError):\n        equal = False\n    if not equal:\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;wrong\&quot;]}\n    if f.free_symbols:\n        return {\&quot;score\&quot;: 0.5, \&quot;feedback\&quot;: T[\&quot;simplify\&quot;]}\n    return {\&quot;score\&quot;: 1, \&quot;feedback\&quot;: T[\&quot;right\&quot;]}&quot;" data-packages="[]" data-response="" data-embed-response="false" data-partial-credit="false" data-form-credit="0.5" data-field-labels="[&quot;The simplified expression&quot;]" data-vecdir="col" data-feedback-policy="{&quot;exercise&quot;:&quot;v24-1b-svar&quot;,&quot;name&quot;:&quot;&quot;}" data-variant-boards="[]" data-variant-board-title="" data-context-mode="none" data-context-refs="" data-context="&quot;Problem 1b: Simplifying\nWrite as simply as possible:\n\\[\\frac{a\\cdot\\ln b-\\ln b^2}{(a-2)\\cdot\\ln\\sqrt{b}}\\]&quot;" data-context-text="&quot;&quot;" data-ctm-save="true" data-ctm-source="999d0cc8bd604de1" data-ctm-component="math-exercise" data-ctm-runtime-id="ctm-block-1" data-ctm-id="v24-1b-svar" data-fields="[&quot;math-exercise-1-f1&quot;]" data-structural-field-labels="[&quot;&quot;]">
+<div class="math-exercise-caption math-exercise-toggle" data-math-exercise-source="1b · Final answer" role="button" tabindex="0" aria-expanded="false"><span class="math-chevron" aria-hidden="true"></span>1b · Final answer</div>
+
+<div class="math-exercise-body" aria-hidden="true">
+<div id="v24-1b-svar-question" class="math-exercise-question ai-feedback-context" data-math-exercise-source="Simplified expression: <input type=&quot;text&quot; id=&quot;math-exercise-1-f1&quot; data-vars=&quot;a, b&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; spellcheck=&quot;false&quot; class=&quot;math-input math-input-medium&quot;>">Simplified expression: <input type="text" id="math-exercise-1-f1" data-answer="" data-vars="a, b" autocomplete="off" autocorrect="off" spellcheck="false" class="math-input math-input-medium"></div>
+
+<div class="math-exercise-controls">
+  <button type="button" class="btn btn-primary math-check-btn">✓&nbsp;Check</button>
+  <button type="button" class="btn btn-light math-legend-btn">ⓘ&nbsp;Input help</button>
+
+
+
+
+</div>
+<div class="math-legend-panel" style="display:none;"></div>
+<div class="math-feedback-area"></div>
+</div>
+</div>
+<div id="v24-1b" class="ai-feedback-activity">
+<p><strong>Show your working for 1b.</strong> Upload a photo of what you wrote on paper.</p>
+<script type="application/json" class="ai-feedback-data">{"context":"Problem 1b: Simplifying","contextMode":"explicit","contextRefs":"v24-oppg1b","feedbackLanguage":"en","id":"v24-1b","imageRole":"response","imageUpload":true,"learnerLevel":"","materials":[],"policySelection":{"exercise":"v24-1b","name":""},"profile":"mathematics","resetOnVariant":"v24-1b-fyll","responseLanguage":"","sourceLanguage":"","starter":"","task":"Show your working for 1b. Upload a photo of what you wrote on paper.","uiLanguage":"en"}</script>
+<noscript>Enable JavaScript to use this feedback activity.</noscript>
+</div>
+</section>
+<section id="problem-3b-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3b-derivative">Problem 3b: Derivative</h2>
+<div id="v24-oppg3b" class="ai-context">
+<p>Differentiate the function and simplify the answer as far as possible.</p>
+<p><span data-ai-feedback-tex="g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)" data-ai-feedback-display="true"><span class="math display">\[g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)\]</span></span></p>
+</div>
+<div class="math-exercise-cell" data-similar="false" data-similar-guidance="[]" data-generation-policy="[]" id="math-exercise-2" data-label="v24-3b-svar" data-mode="custom" data-reject="" data-vars="x" data-tolerance="" data-decplaces="" data-sigfigs="" data-form="" data-checker="&quot;T = {\n    \&quot;right\&quot;: \&quot;Correct, and written as one simplified fraction.\&quot;,\n    \&quot;one_fraction\&quot;: \&quot;Your derivative is right, but write it as one fraction.\&quot;,\n    \&quot;common_factor\&quot;: \&quot;Your derivative is right, but the numerator and the denominator still have a common factor. Simplify further.\&quot;,\n    \&quot;inner\&quot;: \&quot;Check the chain rule: the derivative of ln u is u′/u. Did you multiply by the derivative of the inner function u?\&quot;,\n    \&quot;half\&quot;: \&quot;Almost: check what happens to the factor ½ in front of the logarithm.\&quot;,\n    \&quot;outer\&quot;: \&quot;You have the derivative of the inner function, but the derivative of ln u is u′/u. What must you divide by?\&quot;,\n    \&quot;wrong\&quot;: \&quot;This is not g′(x). Use the chain rule (the derivative of ln u is u′/u) and keep the factor ½.\&quot;,\n}\ndef check(response, symbols):\n    from sympy import degree, gcd\n    x = symbols[\&quot;x\&quot;]\n    f = response[\&quot;expressions\&quot;][0]\n    points = [Rational(1, 3), -Rational(1, 2), Rational(7, 10), -Rational(9, 10), Rational(1, 5)]\n    def same(g):\n        try:\n            return f.free_symbols <= {x} and all(abs(N((f - g).subs(x, p))) < 1e-9 for p in points)\n        except (TypeError, ValueError, ZeroDivisionError):\n            return False\n    u = 2*x**2 - 2*x**4\n    target = (1 - 2*x**2)/(x - x**3)\n    if same(target):\n        if f.is_Add:\n            return {\&quot;score\&quot;: 0.5, \&quot;feedback\&quot;: T[\&quot;one_fraction\&quot;]}\n        numerator, denominator = f.as_numer_denom()\n        if degree(gcd(expand(numerator), expand(denominator)), x) > 0:\n            return {\&quot;score\&quot;: 0.5, \&quot;feedback\&quot;: T[\&quot;common_factor\&quot;]}\n        return {\&quot;score\&quot;: 1, \&quot;feedback\&quot;: T[\&quot;right\&quot;]}\n    if any(same(g) for g in (1/(2*u), 1/u, 1/(4*x**2 - 4*x**4), Rational(1, 2)*log(u))):\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;inner\&quot;]}\n    if same(2*target):\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;half\&quot;]}\n    if same(diff(u, x)/2) or same(diff(u, x)):\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;outer\&quot;]}\n    return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;wrong\&quot;]}&quot;" data-packages="[]" data-response="" data-embed-response="false" data-partial-credit="false" data-form-credit="0.5" data-field-labels="[&quot;g′(x)&quot;]" data-vecdir="col" data-feedback-policy="{&quot;exercise&quot;:&quot;v24-3b-svar&quot;,&quot;name&quot;:&quot;&quot;}" data-variant-boards="[]" data-variant-board-title="" data-context-mode="none" data-context-refs="" data-context="&quot;Problem 3b: Derivative\nDifferentiate the function and simplify the answer as far as possible.\n\\[g(x)=\\frac{1}{2}\\ln\\left(2x^2-2x^4\\right)\\]&quot;" data-context-text="&quot;&quot;" data-ctm-save="true" data-ctm-source="825fbfdca9240497" data-ctm-component="math-exercise" data-ctm-runtime-id="ctm-block-2" data-ctm-id="v24-3b-svar" data-fields="[&quot;math-exercise-2-f1&quot;]" data-structural-field-labels="[&quot;&quot;]">
+<div class="math-exercise-caption math-exercise-toggle" data-math-exercise-source="3b · Final answer" role="button" tabindex="0" aria-expanded="false"><span class="math-chevron" aria-hidden="true"></span>3b · Final answer</div>
+
+<div class="math-exercise-body" aria-hidden="true">
+<div id="v24-3b-svar-question" class="math-exercise-question ai-feedback-context" data-math-exercise-source="\(g'(x)=\) <input type=&quot;text&quot; id=&quot;math-exercise-2-f1&quot; data-vars=&quot;x&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; spellcheck=&quot;false&quot; class=&quot;math-input math-input-medium&quot;>">\(g'(x)=\) <input type="text" id="math-exercise-2-f1" data-answer="" data-vars="x" autocomplete="off" autocorrect="off" spellcheck="false" class="math-input math-input-medium"></div>
+
+<div class="math-exercise-controls">
+  <button type="button" class="btn btn-primary math-check-btn">✓&nbsp;Check</button>
+  <button type="button" class="btn btn-light math-legend-btn">ⓘ&nbsp;Input help</button>
+
+
+
+
+</div>
+<div class="math-legend-panel" style="display:none;"></div>
+<div class="math-feedback-area"></div>
+</div>
+</div>
+<div id="v24-3b" class="ai-feedback-activity">
+<p><strong>Show your working for 3b.</strong> Upload a photo of what you wrote on paper.</p>
+<script type="application/json" class="ai-feedback-data">{"context":"Problem 3b: Derivative","contextMode":"explicit","contextRefs":"v24-oppg3b","feedbackLanguage":"en","id":"v24-3b","imageRole":"response","imageUpload":true,"learnerLevel":"","materials":[],"policySelection":{"exercise":"v24-3b","name":""},"profile":"mathematics","resetOnVariant":"v24-3b-fyll","responseLanguage":"","sourceLanguage":"","starter":"","task":"Show your working for 3b. Upload a photo of what you wrote on paper.","uiLanguage":"en"}</script>
+<noscript>Enable JavaScript to use this feedback activity.</noscript>
+</div>
+</section>
+<section id="problem-3c-tangent" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3c-tangent">Problem 3c: Tangent</h2>
+<div id="v24-oppg3c" class="ai-context">
+<p>Find the equation of the tangent to the function</p>
+<p><span data-ai-feedback-tex="h(x)=x\ln x" data-ai-feedback-display="true"><span class="math display">\[h(x)=x\ln x\]</span></span></p>
+<p>through the point <span data-ai-feedback-tex="\left(e,h(e)\right)" data-ai-feedback-display="false"><span class="math inline">\(\left(e,h(e)\right)\)</span></span>. Give the answer with exact values.</p>
+</div>
+<div class="math-exercise-cell" data-similar="false" data-similar-guidance="[]" data-generation-policy="[]" id="math-exercise-3" data-label="v24-3c-svar" data-mode="custom" data-reject="" data-vars="x" data-tolerance="" data-decplaces="" data-sigfigs="" data-form="" data-checker="&quot;T = {\n    \&quot;right\&quot;: \&quot;Correct: the line has the right slope and passes through (e, h(e)).\&quot;,\n    \&quot;exact\&quot;: \&quot;The line is right, but the problem asks for exact values. Write e instead of a decimal number.\&quot;,\n    \&quot;slope\&quot;: \&quot;The line passes through (e, h(e)), but the slope is wrong. The slope is h′(e): check the derivative of x·ln x (product rule).\&quot;,\n    \&quot;point\&quot;: \&quot;The slope is right, but the line does not pass through (e, h(e)). Check h(e) and the one-point formula.\&quot;,\n    \&quot;line\&quot;: \&quot;A tangent is a straight line. Write it in the form y = ax + b.\&quot;,\n    \&quot;symbols\&quot;: \&quot;Use only x and the number e in the answer: write the right-hand side of y = ….\&quot;,\n    \&quot;wrong\&quot;: \&quot;This is not the tangent. Find the slope h′(e) and the point (e, h(e)), and use the one-point formula y − y₁ = a(x − x₁).\&quot;,\n}\ndef check(response, symbols):\n    x = symbols[\&quot;x\&quot;]\n    f = response[\&quot;expressions\&quot;][0].subs(Symbol(\&quot;e\&quot;), E)\n    if not f.free_symbols <= {x}:\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;symbols\&quot;]}\n    try:\n        if diff(f, x, 2) != 0:\n            return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;line\&quot;]}\n        slope, through = N(diff(f, x)), N(f.subs(x, E) - E)\n    except (TypeError, ValueError):\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;wrong\&quot;]}\n    slope_ok, through_ok = abs(slope - 2) < 1e-6, abs(through) < 1e-6\n    if slope_ok and through_ok:\n        if f.has(Float):\n            return {\&quot;score\&quot;: 0.5, \&quot;feedback\&quot;: T[\&quot;exact\&quot;]}\n        return {\&quot;score\&quot;: 1, \&quot;feedback\&quot;: T[\&quot;right\&quot;]}\n    if through_ok:\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;slope\&quot;]}\n    if slope_ok:\n        return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;point\&quot;]}\n    return {\&quot;score\&quot;: 0, \&quot;feedback\&quot;: T[\&quot;wrong\&quot;]}&quot;" data-packages="[]" data-response="" data-embed-response="false" data-partial-credit="false" data-form-credit="0.5" data-field-labels="[&quot;y&quot;]" data-vecdir="col" data-feedback-policy="{&quot;exercise&quot;:&quot;v24-3c-svar&quot;,&quot;name&quot;:&quot;&quot;}" data-variant-boards="[]" data-variant-board-title="" data-context-mode="none" data-context-refs="" data-context="&quot;Problem 3c: Tangent\nFind the equation of the tangent to the function\n\\[h(x)=x\\ln x\\]\nthrough the point \\(\\left(e,h(e)\\right)\\). Give the answer with exact values.&quot;" data-context-text="&quot;&quot;" data-ctm-save="true" data-ctm-source="ab84f5331b154368" data-ctm-component="math-exercise" data-ctm-runtime-id="ctm-block-3" data-ctm-id="v24-3c-svar" data-fields="[&quot;math-exercise-3-f1&quot;]" data-structural-field-labels="[&quot;&quot;]">
+<div class="math-exercise-caption math-exercise-toggle" data-math-exercise-source="3c · Final answer" role="button" tabindex="0" aria-expanded="false"><span class="math-chevron" aria-hidden="true"></span>3c · Final answer</div>
+
+<div class="math-exercise-body" aria-hidden="true">
+<div id="v24-3c-svar-question" class="math-exercise-question ai-feedback-context" data-math-exercise-source="\(y=\) <input type=&quot;text&quot; id=&quot;math-exercise-3-f1&quot; data-vars=&quot;x&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; spellcheck=&quot;false&quot; class=&quot;math-input math-input-medium&quot;>">\(y=\) <input type="text" id="math-exercise-3-f1" data-answer="" data-vars="x" autocomplete="off" autocorrect="off" spellcheck="false" class="math-input math-input-medium"></div>
+
+<div class="math-exercise-controls">
+  <button type="button" class="btn btn-primary math-check-btn">✓&nbsp;Check</button>
+  <button type="button" class="btn btn-light math-legend-btn">ⓘ&nbsp;Input help</button>
+
+
+
+
+</div>
+<div class="math-legend-panel" style="display:none;"></div>
+<div class="math-feedback-area"></div>
+</div>
+</div>
+<div id="v24-3c" class="ai-feedback-activity">
+<p><strong>Show your working for 3c.</strong> Upload a photo of what you wrote on paper.</p>
+<script type="application/json" class="ai-feedback-data">{"context":"Problem 3c: Tangent","contextMode":"explicit","contextRefs":"v24-oppg3c","feedbackLanguage":"en","id":"v24-3c","imageRole":"response","imageUpload":true,"learnerLevel":"","materials":[],"policySelection":{"exercise":"v24-3c","name":""},"profile":"mathematics","resetOnVariant":"v24-3c-fyll","responseLanguage":"","sourceLanguage":"","starter":"","task":"Show your working for 3c. Upload a photo of what you wrote on paper.","uiLanguage":"en"}</script>
+<noscript>Enable JavaScript to use this feedback activity.</noscript>
+</div>
+
+
+<!--ctm-save-generated--><script type="application/json" id="ctm-store-manifest">{"exercises":[{"component":"math-exercise","id":"v24-1b-svar","order":1,"runtimeId":"ctm-block-1","save":true,"source":"999d0cc8bd604de1"},{"component":"math-exercise","id":"v24-3b-svar","order":2,"runtimeId":"ctm-block-2","save":true,"source":"825fbfdca9240497"},{"component":"math-exercise","id":"v24-3c-svar","order":3,"runtimeId":"ctm-block-3","save":true,"source":"ab84f5331b154368"}],"export":true,"messages":{"answered":"Answered, not graded","answersStorage":"Answers \u0026 storage","clearFailed":"Browser storage could not be cleared or updated. Use your browser settings to remove this course data.","confirmClearCourse":"Delete all your saved answers in this course?","confirmClearPage":"Delete all saved answers on this page?","confirmNewVariant":"Replace your filled answers with a new variant?","confirmSaveOff":"This deletes all saved answers in this course and stops saving.","copyAll":"Copy all","correct":"✓ correct","downloadHTML":"Download .html","downloadMarkdown":"Download .md","exercise":"Exercise","exportClose":"Close","exportTitle":"Export my answers","lastResult":"Last result","locale":"en","notSaving":"Answers aren’t being saved","outdated":"Outdated","partial":"½ partly correct","progressTitle":"Page progress","recordTooLarge":"This answer is too large to save. Copy it before leaving the page.","saveOff":"Do not save on this device","saveOn":"Save again","savedLocal":"Saved in this browser","savingDisabled":"Saving is off for this page.","savingLocal":"Saving in this browser","savingNotice":"Your answers are saved only in this browser.","savingOffNotice":"Saving is off on this device for this course.","settings":"Settings","showSaved":"Show your saved answer","sourceChanged":"The exercise has changed since you answered.","statusCorrect":"correct","statusInvalid":"invalid","statusPartial":"partly correct","statusWrong":"wrong","storageUnavailable":"Saving is unavailable. Your answers are kept in memory for this page only.","total":"{score} of {count}","unattempted":"– not attempted","variantChanged":"This variant has changed.","variantWithdrawn":"This variant has been withdrawn.","wrong":"✗ wrong"},"progress":false,"quizzes":[],"save":true,"v":1}</script>
+<!--ctm-layout-generated--><span id="ctm-layout-ready" hidden=""></span>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script src="../assets/handskrift/js-yaml.min.js"></script>
+<script src="../assets/handskrift/fyll-inn.js" data-assets="assets/logaritmer/" data-students="9" data-prefix="v24-" data-storage-key="logaritmer" data-feedback-dir="feedback/logarithms/" data-files="tutor.yml,tasks.yml" data-guide="handwriting-ai-prompts.html#the-logarithms-page"></script>
+
+
+
+
+<script src="../site_libs/quarto-contrib/ctm-matrix-input-0.9.0/ctm-matrix-input.js"></script>
+<script src="../site_libs/quarto-contrib/math-exercise-0.11.0/math-store.js"></script>
+<script src="../site_libs/quarto-contrib/math-exercise-0.11.0/math-exercise.js"></script>
+</body></html>

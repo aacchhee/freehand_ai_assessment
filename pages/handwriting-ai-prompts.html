@@ -186,7 +186,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handwriting-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practice exam V2025</span></a>
+ <span class="menu-text">Physics: practice exam V2025</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logarithms-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mathematics: logarithms V24</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -195,18 +201,35 @@ window.Quarto = {
  <span class="menu-text">Playing with the prompts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bokmål</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handskrift-ki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prøveeksamen V2025 (bokmål)</span></a>
+ <span class="menu-text">Fysikk: prøveeksamen V2025</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logaritmer-ki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matematikk: logaritmer V24</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handskrift-ki-prompter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spill med promptene (bokmål)</span></a>
+ <span class="menu-text">Spill med promptene</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -231,6 +254,7 @@ window.Quarto = {
   <li><a href="#change-what-the-ai-knows-about-one-subtask" id="toc-change-what-the-ai-knows-about-one-subtask" class="nav-link" data-scroll-target="#change-what-the-ai-knows-about-one-subtask">Change what the AI knows about one subtask</a></li>
   <li><a href="#add-an-answer" id="toc-add-an-answer" class="nav-link" data-scroll-target="#add-an-answer">Add an answer</a></li>
   </ul></li>
+  <li><a href="#the-logarithms-page" id="toc-the-logarithms-page" class="nav-link" data-scroll-target="#the-logarithms-page">The logarithms page</a></li>
   <li><a href="#yaml-pitfalls" id="toc-yaml-pitfalls" class="nav-link" data-scroll-target="#yaml-pitfalls">YAML pitfalls</a></li>
   <li><a href="#benchmark-routine" id="toc-benchmark-routine" class="nav-link" data-scroll-target="#benchmark-routine">Benchmark routine</a></li>
   <li><a href="#provider-and-model" id="toc-provider-and-model" class="nav-link" data-scroll-target="#provider-and-model">Provider and model</a></li>
@@ -246,7 +270,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Playing with the prompts</h1>
-<p class="subtitle lead">For teachers: how to change the AI feedback on the Handwriting and AI page</p>
+<p class="subtitle lead">For teachers: how to change the AI feedback on the handwriting pages</p>
 </div>
 
 
@@ -268,6 +292,7 @@ window.Quarto = {
 </div>
 <section id="in-short" class="level2">
 <h2 class="anchored" data-anchor-id="in-short">In short</h2>
+<p>Every exam page has its own prompts. This guide uses the physics page (<a href="../pages/handwriting-ai.html">Practice exam V2025</a>) as the example; everything works the same way on <a href="#the-logarithms-page">the logarithms page</a>, with other files.</p>
 <p>All text the AI gets from us is in two YAML files in the repository:</p>
 <table class="caption-top table">
 <thead>
@@ -498,8 +523,47 @@ A subtask can also get its own settings, for example shorter answers:"><pre clas
 </section>
 <section id="add-an-answer" class="level3">
 <h3 class="anchored" data-anchor-id="add-an-answer">Add an answer</h3>
-<p>Put a photo in <code>assets/handskrift/student1/</code> or <code>student2/</code> named after the subtask (<code>1b.png</code>). If one subtask has several photos, they are called <code>1b.png</code>, <code>1b-2.png</code> and <code>1b-3.png</code>. The fill-in button finds the photo automatically, on both pages. The final values filled into the answer fields are in the table <code>ANSWERS</code> at the top of <code>assets/handskrift/fyll-inn.js</code>.</p>
+<p>Put a photo in <code>assets/handskrift/student1/</code> or <code>student2/</code> named after the subtask (<code>1b.png</code>). If one subtask has several photos, they are called <code>1b.png</code>, <code>1b-2.png</code> and <code>1b-3.png</code>. The fill-in button finds the photo automatically, on both pages. The final values filled into the answer fields are in <code>assets/handskrift/answers.json</code>.</p>
 </section>
+</section>
+<section id="the-logarithms-page" class="level2">
+<h2 class="anchored" data-anchor-id="the-logarithms-page">The logarithms page</h2>
+<p><a href="../pages/logarithms-ai.html">Logarithms and AI</a> (problems 1b, 3b and 3c from the mathematics exam V24) has its own prompts. A change there does not affect the physics pages, and vice versa. Its sandbox is also kept apart from the physics sandbox.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tutor.yml"><code>feedback/logarithms/tutor.yml</code></a></td>
+<td><strong>How</strong> the AI answers: a mathematics teacher who checks every line and names the rule; policies <code>logarithms</code> (default), <code>logarithms-with-transcript</code> and <code>logarithms-review</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tasks.yml"><code>feedback/logarithms/tasks.yml</code></a></td>
+<td><strong>What</strong> the AI knows about each problem (<code>v24-1b</code>, <code>v24-3b</code>, <code>v24-3c</code>): reference solution and typical mistakes</td>
+</tr>
+<tr class="odd">
+<td><code>feedback/logaritmer/veileder.yml</code>, <code>oppgaver.yml</code></td>
+<td>The same for the Norwegian page (<a href="../pages/logaritmer-ki.html">Logaritmer og KI</a>)</td>
+</tr>
+<tr class="even">
+<td><code>_includes/logarithms/problems.md</code></td>
+<td>The problem text, the answer fields with their Python checkers and the upload fields</td>
+</tr>
+<tr class="odd">
+<td><code>_includes/logaritmer/tests/</code></td>
+<td>Tests for the checkers; <code>quarto render</code> stops if one fails</td>
+</tr>
+<tr class="even">
+<td><code>assets/logaritmer/student1/</code> … <code>student9/</code>, <code>answers.json</code></td>
+<td>The real answers of nine students and their final answers</td>
+</tr>
+</tbody>
+</table>
+<p>The answer fields are checked by Python (SymPy) in the browser. The checker decides more than right or wrong: an answer that is equal to the right one but not as simple as the problem asks (1b, 3b), or a decimal number instead of <span class="math inline">\(e\)</span> (3c), gets half a point and a hint. Typical wrong answers get targeted hints, for example a missing inner derivative in 3b. The texts of these hints are at the top of each checker (<code>T = {…}</code>). Change the hint text there, not the logic, unless you also update the tests.</p>
 </section>
 <section id="yaml-pitfalls" class="level2">
 <h2 class="anchored" data-anchor-id="yaml-pitfalls">YAML pitfalls</h2>

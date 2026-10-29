@@ -158,7 +158,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/handskrift-ki-prompter.html">Spill med promptene (bokmål)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/handskrift-ki.html">Bokmål</a></li><li class="breadcrumb-item"><a href="../pages/handskrift-ki-prompter.html">Spill med promptene</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Slå av eller på sidebarnavigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søk" onclick="window.quartoOpenSearch();">
@@ -186,7 +186,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handwriting-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practice exam V2025</span></a>
+ <span class="menu-text">Physics: practice exam V2025</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logarithms-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mathematics: logarithms V24</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -195,18 +201,35 @@ window.Quarto = {
  <span class="menu-text">Playing with the prompts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bokmål</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Slå på delen">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handskrift-ki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prøveeksamen V2025 (bokmål)</span></a>
+ <span class="menu-text">Fysikk: prøveeksamen V2025</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/logaritmer-ki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matematikk: logaritmer V24</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/handskrift-ki-prompter.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Spill med promptene (bokmål)</span></a>
+ <span class="menu-text">Spill med promptene</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -231,6 +254,7 @@ window.Quarto = {
   <li><a href="#endre-det-ki-en-vet-om-én-deloppgave" id="toc-endre-det-ki-en-vet-om-én-deloppgave" class="nav-link" data-scroll-target="#endre-det-ki-en-vet-om-én-deloppgave">Endre det KI-en vet om én deloppgave</a></li>
   <li><a href="#legg-til-en-besvarelse" id="toc-legg-til-en-besvarelse" class="nav-link" data-scroll-target="#legg-til-en-besvarelse">Legg til en besvarelse</a></li>
   </ul></li>
+  <li><a href="#logaritmesiden" id="toc-logaritmesiden" class="nav-link" data-scroll-target="#logaritmesiden">Logaritmesiden</a></li>
   <li><a href="#yaml-feller" id="toc-yaml-feller" class="nav-link" data-scroll-target="#yaml-feller">YAML-feller</a></li>
   <li><a href="#benchmark-rutine" id="toc-benchmark-rutine" class="nav-link" data-scroll-target="#benchmark-rutine">Benchmark-rutine</a></li>
   <li><a href="#leverandør-og-modell" id="toc-leverandør-og-modell" class="nav-link" data-scroll-target="#leverandør-og-modell">Leverandør og modell</a></li>
@@ -243,10 +267,10 @@ window.Quarto = {
 <script>window.__aiFeedbackConfig = {"baseUrl":"","mode":"api","model":""};</script>
 <script>window.__mathExerciseConfig = {"lang":"nb","stopAfter":20};</script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/handskrift-ki.html">Bokmål</a></li><li class="breadcrumb-item"><a href="../pages/handskrift-ki-prompter.html">Spill med promptene</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Spill med promptene</h1>
-<p class="subtitle lead">For lærere: slik endrer du KI-tilbakemeldingen på siden Håndskrift og KI</p>
+<p class="subtitle lead">For lærere: slik endrer du KI-tilbakemeldingen på håndskriftsidene</p>
 </div>
 
 
@@ -268,6 +292,7 @@ window.Quarto = {
 </div>
 <section id="kort-fortalt" class="level2">
 <h2 class="anchored" data-anchor-id="kort-fortalt">Kort fortalt</h2>
+<p>Hver eksamensside har egne prompter. Denne veiledningen bruker fysikksiden (<a href="../pages/handskrift-ki.html">Prøveeksamen V2025</a>) som eksempel; alt virker på samme måte på <a href="#logaritmesiden">logaritmesiden</a>, med andre filer.</p>
 <p>All tekst KI-en får fra oss, ligger i to YAML-filer i repoet:</p>
 <table class="caption-top table">
 <thead>
@@ -498,8 +523,47 @@ En deloppgave kan også få egne innstillinger, for eksempel tillate fullstendig
 </section>
 <section id="legg-til-en-besvarelse" class="level3">
 <h3 class="anchored" data-anchor-id="legg-til-en-besvarelse">Legg til en besvarelse</h3>
-<p>Legg et bilde i <code>assets/handskrift/student1/</code> eller <code>student2/</code> med deloppgaven som navn (<code>1b.png</code>). Har én deloppgave flere bilder, heter de <code>1b.png</code>, <code>1b-2.png</code> og <code>1b-3.png</code>. Fyll inn-knappen finner bildet automatisk. Sluttsvarene som fylles inn i svarfeltene, står i tabellen <code>ANSWERS</code> øverst i <code>assets/handskrift/fyll-inn.js</code>.</p>
+<p>Legg et bilde i <code>assets/handskrift/student1/</code> eller <code>student2/</code> med deloppgaven som navn (<code>1b.png</code>). Har én deloppgave flere bilder, heter de <code>1b.png</code>, <code>1b-2.png</code> og <code>1b-3.png</code>. Fyll inn-knappen finner bildet automatisk. Sluttsvarene som fylles inn i svarfeltene, står i <code>assets/handskrift/answers.json</code>.</p>
 </section>
+</section>
+<section id="logaritmesiden" class="level2">
+<h2 class="anchored" data-anchor-id="logaritmesiden">Logaritmesiden</h2>
+<p><a href="../pages/logaritmer-ki.html">Logaritmer og KI</a> (oppgave 1b, 3b og 3c fra matematikkeksamen V24) har egne prompter. En endring der påvirker ikke fysikksidene, og omvendt. Sandkassen holdes også atskilt fra fysikksandkassen.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fil</th>
+<th>Styrer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logaritmer/veileder.yml"><code>feedback/logaritmer/veileder.yml</code></a></td>
+<td><strong>Hvordan</strong> KI-en svarer: en matematikklærer som sjekker hver linje og navngir regelen; policyene <code>logaritmer</code> (standard), <code>logaritmer-med-transkripsjon</code> og <code>logaritmer-vurdering</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logaritmer/oppgaver.yml"><code>feedback/logaritmer/oppgaver.yml</code></a></td>
+<td><strong>Hva</strong> KI-en vet om hver oppgave (<code>v24-1b</code>, <code>v24-3b</code>, <code>v24-3c</code>): fasit og typiske feil</td>
+</tr>
+<tr class="odd">
+<td><code>feedback/logarithms/tutor.yml</code>, <code>tasks.yml</code></td>
+<td>Det samme for den engelske siden (<a href="../pages/logarithms-ai.html">Logarithms and AI</a>)</td>
+</tr>
+<tr class="even">
+<td><code>_includes/logaritmer/oppgaver.md</code></td>
+<td>Oppgaveteksten, svarfeltene med Python-sjekkerne og opplastingsfeltene</td>
+</tr>
+<tr class="odd">
+<td><code>_includes/logaritmer/tests/</code></td>
+<td>Tester for sjekkerne; <code>quarto render</code> stopper hvis en feiler</td>
+</tr>
+<tr class="even">
+<td><code>assets/logaritmer/student1/</code> … <code>student9/</code>, <code>answers.json</code></td>
+<td>De ekte besvarelsene til ni studenter og svarene deres</td>
+</tr>
+</tbody>
+</table>
+<p>Svarfeltene sjekkes av Python (SymPy) i nettleseren. Sjekkeren avgjør mer enn riktig eller galt: et svar som er lik det riktige, men ikke så enkelt som oppgaven ber om (1b, 3b), eller et desimaltall i stedet for <span class="math inline">\(e\)</span> (3c), får et halvt poeng og et hint. Typiske gale svar får målrettede hint, for eksempel en manglende derivert av kjernen i 3b. Tekstene i hintene står øverst i hver sjekker (<code>T = {…}</code>). Endre hintteksten der, ikke logikken, med mindre du også oppdaterer testene.</p>
 </section>
 <section id="yaml-feller" class="level2">
 <h2 class="anchored" data-anchor-id="yaml-feller">YAML-feller</h2>
