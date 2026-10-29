@@ -18,7 +18,9 @@ How large is the spring constant?
 #| field-labels: Spring constant in N/m
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg4
+#| harder: Make the spring vertical — it launches the ball straight up, and the spring energy becomes both kinetic and potential energy over the compression.
+#| simpler: Give the force needed to hold the spring compressed, so Hooke's law gives the spring constant directly.
 
 $k=$ __[0.057*3**2/0.05**2] N/m
 ```
@@ -39,7 +41,9 @@ horizontally from the edge of the table until it lands?
 #| field-labels: Horizontal distance in m
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg4
+#| harder: Give the spring constant and the compression instead of the launch speed, so the speed must be found from energy conservation first.
+#| simpler: Give the time of fall instead of the table height.
 
 $x=$ __[3*sqrt(2*1.4/9.81)] m
 ```
@@ -59,7 +63,9 @@ the ball is $480\,\mathrm{mJ}$?
 #| field-labels: Vertical velocity in m/s
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg4
+#| harder: Ask for the vertical velocity at a stated height below the table top without giving the kinetic energy.
+#| simpler: Ask for the vertical velocity just before the ball hits the ground.
 
 $v_y=$ __[sqrt(2*0.48/0.057-9)] m/s
 ```

@@ -218,6 +218,26 @@ subtask (`1b.png`). If one subtask has several photos, they are called `1b.png`,
 both pages. The final values filled into the answer fields are in
 `assets/handskrift/answers.json`.
 
+## Similar problems
+
+On the English physics page every answer field has **Similar problem** with
+**Easier**, **Harder** and **Another one like this**. The AI writes a new
+problem; the answer field checks it with the same mode and tolerance. Three
+places control what it writes:
+
+| Where | Controls |
+|---|---|
+| [`feedback/handwriting/practice.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/handwriting/practice.yml), policy `physics-practice` | The common rules for every generated problem (realistic values, SI units, the same quantities as the original), and what *harder*, *easier* and *same* mean in general |
+| `#| harder:` and `#| simpler:` in each answer field in `_includes/handwriting/problem-N.md` | What harder and simpler mean for that subtask, for example “give the spring constant and the compression instead of the launch speed” |
+| `#| context:` in the same answer field | Which problem text the AI gets (the problem's `.ai-context` block and the subtask's own text) |
+
+The photo feedback does not use `practice.yml`, and the generation does not use
+`tutor.yml` or `tasks.yml`. The answer fields also have a **Feedback** button
+for the typed answer; it uses `tutor.yml` like the photo feedback. A good
+direction asks for one more (or one less) reasoning step and keeps the answer
+fields: the same quantities in the same units. Generation needs a direct API
+with a reasoning model (Generation model in the settings ⚙).
+
 ## The logarithms page
 
 [Logarithms and AI](logarithms-ai.qmd) (problems 1b, 3b and 3c from the

@@ -19,7 +19,9 @@ Calculate the tension in the string.
 #| field-labels: Tension in N
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg9
+#| harder: Give the acceleration only through the distance the hanging block rises in a stated time from rest.
+#| simpler: Let the blocks move at constant speed, so the tension equals the weight of the hanging block.
 
 $S=$ __[5.15*(9.81+2.0)] N
 ```
@@ -38,7 +40,9 @@ Calculate the mass of the large block $M$.
 #| field-labels: Mass M in kg
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg9
+#| harder: Use another incline angle and give the acceleration only through the distance M slides in a stated time from rest.
+#| simpler: Make the incline frictionless.
 
 $M=$ __[5.15*(9.81+2.0)/(9.81*sin(pi/4)-0.135*9.81*cos(pi/4)-2.0)] kg
 ```

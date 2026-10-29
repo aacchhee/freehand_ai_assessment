@@ -1,0 +1,35 @@
+# Similar problems on the English physics page: what the AI is told when a
+# student chooses Similar problem → Easier, Harder or Another one like this
+# under an answer field. The photo feedback uses tutor.yml and tasks.yml;
+# nothing here changes it.
+#
+# The page selects this policy in the front matter of pages/handwriting-ai.qmd:
+#   ai-feedback:
+#     generation-policy: {default: physics-practice}
+# Each answer field adds its own short "harder" and "simpler" direction
+# (#| harder: … and #| simpler: … in _includes/handwriting/problem-N.md).
+# Generated problems are practice only; they never count as answers to the exam.
+
+ai-feedback:
+  policies:
+    physics-practice:
+      base-prompt: >-
+        The original is a problem from a written physics exam in a university
+        preparatory course. Write a new problem about the same physics, solved
+        on paper with a calculator. Use SI units and the constants the original
+        uses (g = 9.81 m/s²). Choose realistic, round given values with two or
+        three significant figures, and make sure the situation is physically
+        possible (positive times, masses and lengths, speeds below the speed of
+        light, a floating object less dense than the liquid). Describe every
+        given value in the text: the student does not see a figure. Ask for
+        exactly the quantities of the original answer fields, in the same order
+        and the same units, so the same fields and the same tolerance apply.
+      harder: >-
+        Add one natural reasoning step, as the exercise's "harder" direction
+        describes. Do not add more than one new idea.
+      easier: >-
+        Remove one step, as the exercise's "simpler" direction describes, so
+        the core law of the original is used directly.
+      same: >-
+        Keep the method and the number of steps; change the situation and the
+        given values.

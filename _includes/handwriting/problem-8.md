@@ -17,7 +17,9 @@ fission? Justify your answer.
 #| caption: a · Nucleon number and charge
 #| field-labels: Nucleon number A, Charge number B
 #| mode: numeric
-#| context: none
+#| context: v25-oppg8
+#| harder: Use a reaction with heavier nuclei, for example neutron capture or fission with two named products and one unknown particle.
+#| simpler: Use an alpha or beta decay with one unknown product.
 
 $A=$ __[1], $B=$ __[0]
 ```
@@ -37,7 +39,9 @@ How much energy is released in one such reaction?
 #| field-labels: Energy released in MeV
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg8
+#| harder: Use a reaction with three products, all masses in u with six decimals.
+#| simpler: Give the mass defect in u.
 
 $E=$ __[(2*2.014102-3.016029-1.008665)*931.494] MeV
 ```

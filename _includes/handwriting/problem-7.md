@@ -13,7 +13,9 @@ $560\,\mathrm{nm}$.
 #| field-labels: Frequency in Hz, Energy in J
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg7
+#| harder: Give the wavelength in another unit (μm or pm) or give the photon's momentum instead of its wavelength.
+#| simpler: Give the wavelength in metres in standard form.
 
 Write for example `4.5*10^12`. $f=$ __[3.00e8/560e-9] Hz,
 $E=$ __[6.626e-34*3.00e8/560e-9] J
@@ -34,7 +36,9 @@ $560\,\mathrm{nm}$. How many photons does the lamp emit per second?
 #| field-labels: Number of photons per second
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg7
+#| harder: Give the electric power and an efficiency, so only part of the power is emitted as light of this wavelength.
+#| simpler: Give the energy of one photon in J.
 
 $N=$ __[60/(6.626e-34*3.00e8/560e-9)] per second
 ```

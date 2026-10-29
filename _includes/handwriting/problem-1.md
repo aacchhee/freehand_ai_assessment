@@ -14,7 +14,9 @@ the ground is it then?
 #| field-labels: Time in s, Height above the ground in m
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg1
+#| harder: Give the ball's speed at a stated height above the launch point instead of the launch speed, so the launch speed must be found first. Still ask for the time to the top and the height above the ground.
+#| simpler: Throw the ball from ground level, so the height above the ground is just the rise. Still ask for the time and the height.
 
 $t=$ __[6.0/9.81] s, $h=$ __[1.5+36/(2*9.81)] m
 ```
@@ -43,7 +45,9 @@ ball's potential energy during the first second?
 #| field-labels: Change in potential energy in J
 #| mode: numeric
 #| tolerance: 2%
-#| context: none
+#| context: v25-oppg1
+#| harder: Ask for the change after a time when the ball is below the launch point, so the change is negative and the sign matters. Give the mass in grams.
+#| simpler: Ask for the change between the launch and the highest point, and give the mass in kilograms.
 
 $\Delta E_p=$ __[0.450*9.81*(6.0-9.81/2)] J
 ```
