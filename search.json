@@ -249,7 +249,7 @@
     "href": "pages/handwriting-ai-prompts.html#the-logarithms-page",
     "title": "Playing with the prompts",
     "section": "The logarithms page",
-    "text": "The logarithms page\nLogarithms and AI (problems 1b, 3b and 3c from the mathematics exam V24) has its own prompts. A change there does not affect the physics pages, and vice versa. Its sandbox is also kept apart from the physics sandbox.\n\n\n\nFile\nControls\n\n\n\n\nfeedback/logarithms/tutor.yml\nHow the AI answers: a mathematics teacher who checks every line and names the rule; policies logarithms (default), logarithms-with-transcript and logarithms-review\n\n\nfeedback/logarithms/tasks.yml\nWhat the AI knows about each problem (v24-1b, v24-3b, v24-3c): reference solution and typical mistakes\n\n\nfeedback/logaritmer/veileder.yml, oppgaver.yml\nThe same for the Norwegian page (Logaritmer og KI)\n\n\n_includes/logarithms/problems.md\nThe problem text, the answer fields with their Python checkers and the upload fields\n\n\n_includes/logaritmer/tests/\nTests for the checkers; quarto render stops if one fails\n\n\nassets/logaritmer/student1/ … student9/, answers.json\nThe real answers of nine students and their final answers\n\n\n\nThe answer fields are checked by Python (SymPy) in the browser. The checker decides more than right or wrong: an answer that is equal to the right one but not as simple as the problem asks (1b, 3b), or a decimal number instead of \\(e\\) (3c), gets half a point and a hint. Typical wrong answers get targeted hints, for example a missing inner derivative in 3b. The texts of these hints are at the top of each checker (T = {…}). Change the hint text there, not the logic, unless you also update the tests.",
+    "text": "The logarithms page\nLogarithms and AI (problems 1b, 3b and 3c from the mathematics exam V24) has its own prompts. A change there does not affect the physics pages, and vice versa. Its sandbox is also kept apart from the physics sandbox.\n\n\n\nFile\nControls\n\n\n\n\nfeedback/logarithms/tutor.yml\nHow the AI answers: a mathematics teacher who checks every line and names the rule; policies logarithms (default), logarithms-with-transcript and logarithms-review\n\n\nfeedback/logarithms/tasks.yml\nWhat the AI knows about each problem (v24-1b, v24-3b, v24-3c): reference solution and typical mistakes\n\n\nfeedback/logaritmer/veileder.yml, oppgaver.yml\nThe same for the Norwegian page (Logaritmer og KI)\n\n\nfeedback/logarithms/practice.yml\nSimilar problems on the English page: policy logarithms-practice\n\n\n_includes/logarithms/problems.md\nThe problem text, the answer fields with their Python checkers and the upload fields; each field’s #| givens: (the expression, function or point the checker reads), #| similar-data: (which givens a similar problem may change) and #| harder: / #| simpler:\n\n\n_includes/logaritmer/tests/\nTests for the checkers; quarto render stops if one fails\n\n\nassets/logaritmer/student1/ … student9/, answers.json\nThe real answers of nine students and their final answers\n\n\n\nThe answer fields are checked by Python (SymPy) in the browser. The checker decides more than right or wrong: an answer that is equal to the right one but not as simple as the problem asks (1b, 3b), or a decimal number instead of \\(e\\) (3c), gets half a point and a hint. Typical wrong answers get targeted hints, for example a missing inner derivative in 3b. The texts of these hints are at the top of each checker (T = {…}). Change the hint text there, not the logic, unless you also update the tests.\nOn the English page the checkers read their givens instead of fixed answers. Similar problem lets the AI choose new givens (a new expression in 1b, a new function in 3b, a new function and point in 3c); the same checker, with the same half credit and hints, grades the new problem.",
     "crumbs": [
       "Playing with the prompts"
     ]
@@ -327,7 +327,7 @@
     "href": "pages/logarithms-ai.html#problem-1b-simplifying",
     "title": "Logarithms and AI",
     "section": "Problem 1b: Simplifying",
-    "text": "Problem 1b: Simplifying\n\nWrite as simply as possible:\n\\[\\frac{a\\cdot\\ln b-\\ln b^2}{(a-2)\\cdot\\ln\\sqrt{b}}\\]\n\n\n1b · Final answer\n\n\nSimplified expression: \n\n\n  ✓ Check\n  ⓘ Input help\n\n\n\n\n\n\n\n\n\n\nShow your working for 1b. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
+    "text": "Problem 1b: Simplifying\n\nWrite as simply as possible:\n\\[\\frac{a\\cdot\\ln b-\\ln b^2}{(a-2)\\cdot\\ln\\sqrt{b}}\\]\n\n\n1b · Final answer\n\n\nSimplified expression: \n\n\n  ✓ Check\n  ⓘ Input help\n  \n    💬 Feedback\n    ⚙\n  \n\n\n\n\n\n\nShow your working for 1b. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
     "crumbs": [
       "Mathematics: logarithms V24"
     ]
@@ -337,7 +337,7 @@
     "href": "pages/logarithms-ai.html#problem-3b-derivative",
     "title": "Logarithms and AI",
     "section": "Problem 3b: Derivative",
-    "text": "Problem 3b: Derivative\n\nDifferentiate the function and simplify the answer as far as possible.\n\\[g(x)=\\frac{1}{2}\\ln\\left(2x^2-2x^4\\right)\\]\n\n\n3b · Final answer\n\n\n\\(g'(x)=\\) \n\n\n  ✓ Check\n  ⓘ Input help\n\n\n\n\n\n\n\n\n\n\nShow your working for 3b. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
+    "text": "Problem 3b: Derivative\n\nDifferentiate the function and simplify the answer as far as possible.\n\\[g(x)=\\frac{1}{2}\\ln\\left(2x^2-2x^4\\right)\\]\n\n\n3b · Final answer\n\n\n\\(g'(x)=\\) \n\n\n  ✓ Check\n  ⓘ Input help\n  \n    💬 Feedback\n    ⚙\n  \n\n\n\n\n\n\nShow your working for 3b. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
     "crumbs": [
       "Mathematics: logarithms V24"
     ]
@@ -347,7 +347,7 @@
     "href": "pages/logarithms-ai.html#problem-3c-tangent",
     "title": "Logarithms and AI",
     "section": "Problem 3c: Tangent",
-    "text": "Problem 3c: Tangent\n\nFind the equation of the tangent to the function\n\\[h(x)=x\\ln x\\]\nthrough the point \\(\\left(e,h(e)\\right)\\). Give the answer with exact values.\n\n\n3c · Final answer\n\n\n\\(y=\\) \n\n\n  ✓ Check\n  ⓘ Input help\n\n\n\n\n\n\n\n\n\n\nShow your working for 3c. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
+    "text": "Problem 3c: Tangent\n\nFind the equation of the tangent to the function\n\\[h(x)=x\\ln x\\]\nthrough the point \\(\\left(e,h(e)\\right)\\). Give the answer with exact values.\n\n\n3c · Final answer\n\n\n\\(y=\\) \n\n\n  ✓ Check\n  ⓘ Input help\n  \n    💬 Feedback\n    ⚙\n  \n\n\n\n\n\n\nShow your working for 3c. Upload a photo of what you wrote on paper.\n\nEnable JavaScript to use this feedback activity.",
     "crumbs": [
       "Mathematics: logarithms V24"
     ]

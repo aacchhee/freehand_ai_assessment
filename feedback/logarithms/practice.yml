@@ -1,0 +1,33 @@
+# Similar problems on the English logarithms page: what the AI is told when a
+# student chooses Similar problem → Easier, Harder or Another one like this
+# under an answer field. The photo feedback uses tutor.yml and tasks.yml;
+# nothing here changes it.
+#
+# The page selects this policy in the front matter of pages/logarithms-ai.qmd:
+#   ai-feedback:
+#     generation-policy: {default: logarithms-practice}
+# Each answer field adds its own "harder" and "simpler" direction
+# (#| harder: … and #| simpler: … in _includes/logarithms/problems.md) and
+# names the givens a new problem may change (#| similar-data: …). The same
+# Python checker grades the new problem with the new givens.
+# Generated problems are practice only; they never count as answers to the exam.
+
+ai-feedback:
+  policies:
+    logarithms-practice:
+      base-prompt: >-
+        The original is a problem from a written mathematics exam in a
+        university preparatory course: logarithms, derivatives and tangents,
+        solved by hand without a calculator. Write a new problem of the same
+        type with exact values only. The natural logarithm is log(…) in data
+        and \ln in the question text. Make sure every logarithm is defined
+        where it is used and the answer can be written exactly and reasonably
+        short. Keep the same answer field and what it asks for.
+      harder: >-
+        Add one natural step, as the exercise's "harder" direction describes.
+        Do not add more than one new idea.
+      easier: >-
+        Remove one step, as the exercise's "simpler" direction describes, so
+        the core rule is used directly.
+      same: >-
+        Keep the method and the number of steps; change the givens.

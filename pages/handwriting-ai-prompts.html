@@ -578,20 +578,25 @@ A subtask can also get its own settings, for example shorter answers:"><pre clas
 <td>The same for the Norwegian page (<a href="../pages/logaritmer-ki.html">Logaritmer og KI</a>)</td>
 </tr>
 <tr class="even">
-<td><code>_includes/logarithms/problems.md</code></td>
-<td>The problem text, the answer fields with their Python checkers and the upload fields</td>
+<td><a href="https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/practice.yml"><code>feedback/logarithms/practice.yml</code></a></td>
+<td>Similar problems on the English page: policy <code>logarithms-practice</code></td>
 </tr>
 <tr class="odd">
+<td><code>_includes/logarithms/problems.md</code></td>
+<td>The problem text, the answer fields with their Python checkers and the upload fields; each field’s <code>#| givens:</code> (the expression, function or point the checker reads), <code>#| similar-data:</code> (which givens a similar problem may change) and <code>#| harder:</code> / <code>#| simpler:</code></td>
+</tr>
+<tr class="even">
 <td><code>_includes/logaritmer/tests/</code></td>
 <td>Tests for the checkers; <code>quarto render</code> stops if one fails</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>assets/logaritmer/student1/</code> … <code>student9/</code>, <code>answers.json</code></td>
 <td>The real answers of nine students and their final answers</td>
 </tr>
 </tbody>
 </table>
 <p>The answer fields are checked by Python (SymPy) in the browser. The checker decides more than right or wrong: an answer that is equal to the right one but not as simple as the problem asks (1b, 3b), or a decimal number instead of <span class="math inline">\(e\)</span> (3c), gets half a point and a hint. Typical wrong answers get targeted hints, for example a missing inner derivative in 3b. The texts of these hints are at the top of each checker (<code>T = {…}</code>). Change the hint text there, not the logic, unless you also update the tests.</p>
+<p>On the English page the checkers read their givens instead of fixed answers. <strong>Similar problem</strong> lets the AI choose new givens (a new expression in 1b, a new function in 3b, a new function and point in 3c); the same checker, with the same half credit and hints, grades the new problem.</p>
 </section>
 <section id="yaml-pitfalls" class="level2">
 <h2 class="anchored" data-anchor-id="yaml-pitfalls">YAML pitfalls</h2>
