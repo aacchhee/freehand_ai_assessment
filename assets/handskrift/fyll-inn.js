@@ -1,6 +1,6 @@
-// Test helpers for the "Håndskrift og KI" / "Handwriting and AI" pages (for
-// trying things out; not a CTM feature). Used by the Norwegian and the English
-// page; its own texts follow the page language (<html lang>).
+// Test helpers for the handwriting pages (for trying things out; not a CTM
+// feature). Used by every handwriting page, Norwegian and English; its own
+// texts follow the page language (<html lang>).
 //  1. "Fill in student N" loads a real answer into the upload field (and the
 //     final values into the answer field), so nobody has to upload by hand.
 //  2. A feedback-language menu next to each upload field overrides the
@@ -12,28 +12,31 @@
 //
 // <script src="…/fyll-inn.js" data-feedback-dir="feedback/handskrift/"
 //         data-files="veileder.yml,oppgaver.yml" data-guide="handskrift-ki-prompter.html">
-// Optional: data-sandbox="false" for a page without the prompt sandbox.
+// Optional, with the defaults of the physics pages:
+//   data-assets="assets/handskrift/"  the answers: <student>/<subtask>.png and answers.json
+//   data-students="2"                 student1 … studentN
+//   data-prefix="v25-"                upload fields are <prefix><subtask>, answer fields <prefix><subtask>-svar
+//   data-storage-key=""               keeps this page's sandbox apart from other pages
+//   data-sandbox="false"              a page without the prompt sandbox
 (function () {
   'use strict';
 
   const script = document.currentScript;
-  const ASSETS = new URL('./', script.src);
   const SITE = new URL('../../', script.src);
+  const ASSETS = script.dataset.assets ? new URL(script.dataset.assets, SITE) : new URL('./', script.src);
+  const PREFIX = script.dataset.prefix || 'v25-';
   const FEEDBACK_DIR = new URL(script.dataset.feedbackDir || 'feedback/handskrift/', SITE);
   const FILES = (script.dataset.files || 'veileder.yml,oppgaver.yml').split(',');
   const GUIDE = script.dataset.guide || 'handskrift-ki-prompter.html';
   const LANG = (document.documentElement.lang || 'nb').toLowerCase().startsWith('en') ? 'en' : 'nb';
-  const STUDENTS = [['student1', 'Student 1'], ['student2', 'Student 2']];
-  // Images: assets/handskrift/<student>/<subtask>.png, optionally also
+  const STUDENTS = Array.from({length: Number(script.dataset.students || 2)}, (_, i) => ['student' + (i + 1), 'Student ' + (i + 1)]);
+  // Images: <assets>/<student>/<subtask>.png, optionally also
   // <subtask>-2.png and <subtask>-3.png. Adding a file adds an answer.
-  // Final values the students wrote (read off the photos), in field order.
+  // <assets>/answers.json holds the final answers the students wrote (read
+  // off the photos), in field order: {"student1": {"1a": ["0.6", "3.3"]}}.
   // Empty string = not answered.
-  const ANSWERS = {
-    student1: {'1a': ['0.6', '3.3'], '1c': ['4.9'], '2a': [''], '2b': ['4.2*10^18'], '3a': ['', '2.2'],
-               '3b': ['87.6'], '4a': ['205'], '4b': ['1.6'], '4c': ['4.1']},
-    student2: {'1a': ['0.6', '3.3'], '1c': ['4.87'], '2a': ['465'], '2b': ['4.2*10^10'], '3a': ['175', '2.3'],
-               '3b': [''], '4a': ['11.2'], '4b': ['7.53'], '4c': ['2.8']}
-  };
+  const ANSWERS = fetch(new URL('answers.json', ASSETS), {cache: 'no-store'})
+    .then(r => r.ok ? r.json() : {}).catch(() => ({}));
   // Value = the language name the model is told to write in.
   const FEEDBACK_LANGUAGES = [
     ['English', 'Engelsk', 'English'],
@@ -44,17 +47,18 @@
     ['German', 'Tysk', 'German']
   ].map(([value, nb, en]) => ({value, label: LANG === 'nb' ? nb : en}));
   const DEFAULT_LANGUAGE = LANG === 'nb' ? 'Norwegian (Bokmål)' : 'English';
-  const SANDBOX_KEY = 'handskrift-sandkasse-v1|' + LANG;
+  const SANDBOX_KEY = 'handskrift-sandkasse-v1|' + LANG + (script.dataset.storageKey ? '|' + script.dataset.storageKey : '');
   const LANGUAGE_KEY = 'handskrift-sprak-v1|' + location.pathname;
 
   const T = {
     nb: {
       fill: label => 'Fyll inn ' + label.toLowerCase(),
+      load: 'Last inn student:',
       loading: 'Laster inn …',
       missing: label => label + ' har ikke levert denne deloppgaven.',
       loaded: label => 'Besvarelsen til ' + label + ' er lastet inn. Velg Tilbakemelding.',
       realAnswers: 'Ekte besvarelser: ',
-      filled: (label, n) => label + ': ' + n + ' deloppgaver lastet inn (oppgave 1–4).',
+      filled: (label, n) => label + ': ' + n + (n === 1 ? ' deloppgave' : ' deloppgaver') + ' lastet inn.',
       clearAll: 'Tøm alt', cleared: 'Alt er tømt.',
       language: 'Språk for tilbakemeldingen: ',
       languageDefault: ' (standard)',
@@ -79,11 +83,12 @@
     },
     en: {
       fill: label => 'Fill in ' + label.toLowerCase(),
+      load: 'Load student:',
       loading: 'Loading …',
       missing: label => label + ' did not answer this subtask.',
       loaded: label => label + '’s answer is loaded. Choose Feedback.',
       realAnswers: 'Real answers: ',
-      filled: (label, n) => label + ': ' + n + ' subtasks loaded (problems 1–4).',
+      filled: (label, n) => label + ': ' + n + (n === 1 ? ' subtask' : ' subtasks') + ' loaded.',
       clearAll: 'Clear all', cleared: 'Everything is cleared.',
       language: 'Feedback language: ',
       languageDefault: ' (default)',
@@ -116,8 +121,8 @@
     node.append(...children);
     return node;
   }
-  function activities() { return [...document.querySelectorAll('.ai-feedback-activity[id^="v25-"]')]; }
-  function subtask(activity) { return activity.id.slice(4); }
+  function activities() { return [...document.querySelectorAll('.ai-feedback-activity[id^="' + PREFIX + '"]')]; }
+  function subtask(activity) { return activity.id.slice(PREFIX.length); }
 
   // ---------- Policy configuration: repository or sandbox, plus language choices ----------
 
@@ -181,7 +186,7 @@
     files.forEach(file => transfer.items.add(file));
     upload.files = transfer.files;
     upload.dispatchEvent(new Event('change', {bubbles: true}));
-    setAnswers(activity, ANSWERS[student]?.[subtask(activity)] || []);
+    setAnswers(activity, (await ANSWERS)[student]?.[subtask(activity)] || []);
     status.textContent = T.loaded(label);
     return true;
   }
@@ -203,11 +208,20 @@
     return el('label', {class: 'feedback-sprak'}, T.language, select);
   }
 
+  // More than three students: "Load student: 1 2 3 …" instead of one long button each.
+  const COMPACT = STUDENTS.length > 3;
+  function studentButton(label, kind, onclick) {
+    const text = COMPACT ? label.replace(/\D+/g, '') : T.fill(label);
+    return el('button', {type: 'button', class: 'btn btn-sm btn-' + kind, title: label, 'aria-label': T.fill(label), onclick}, text);
+  }
+
   function addControls() {
     for (const activity of activities()) {
       const bar = el('div', {class: 'fyll-inn'});
+      if (COMPACT) bar.append(el('span', {}, T.load));
       for (const [student, label] of STUDENTS) {
-        const button = el('button', {type: 'button', class: 'btn btn-sm btn-outline-secondary', 'data-student': student}, T.fill(label));
+        const button = studentButton(label, 'outline-secondary');
+        button.dataset.student = student;
         button.onclick = () => fill(activity, student, label);
         bar.append(button);
         exists(new URL(student + '/' + subtask(activity) + '.png', ASSETS)).then(ok => {
@@ -223,11 +237,12 @@
     if (!toolbar) return;
     toolbar.className = 'fyll-inn-verktoy';
     toolbar.append(el('strong', {}, T.realAnswers));
+    if (COMPACT) toolbar.append(el('span', {}, T.load));
     for (const [student, label] of STUDENTS) {
-      toolbar.append(el('button', {type: 'button', class: 'btn btn-sm btn-primary', onclick: async () => {
+      toolbar.append(studentButton(label, 'primary', async () => {
         const results = await Promise.all(activities().map(activity => fill(activity, student, label)));
         toolbarStatus.textContent = T.filled(label, results.filter(Boolean).length);
-      }}, T.fill(label)));
+      }));
     }
     toolbar.append(el('button', {type: 'button', class: 'btn btn-sm btn-outline-secondary', onclick: () => {
       activities().forEach(clear); toolbarStatus.textContent = T.cleared;

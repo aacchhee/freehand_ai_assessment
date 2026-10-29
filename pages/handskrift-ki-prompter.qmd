@@ -1,6 +1,6 @@
 ---
 title: "Spill med promptene"
-subtitle: "For lærere: slik endrer du KI-tilbakemeldingen på siden Håndskrift og KI"
+subtitle: "For lærere: slik endrer du KI-tilbakemeldingen på håndskriftsidene"
 lang: nb
 toc: true
 ---
@@ -10,6 +10,10 @@ toc: true
 :::
 
 ## Kort fortalt
+
+Hver eksamensside har egne prompter. Denne veiledningen bruker fysikksiden
+([Prøveeksamen V2025](handskrift-ki.qmd)) som eksempel; alt virker på samme
+måte på [logaritmesiden](#logaritmesiden), med andre filer.
 
 All tekst KI-en får fra oss, ligger i to YAML-filer i repoet:
 
@@ -209,7 +213,31 @@ sammen med siden.
 Legg et bilde i `assets/handskrift/student1/` eller `student2/` med deloppgaven som
 navn (`1b.png`). Har én deloppgave flere bilder, heter de `1b.png`, `1b-2.png` og
 `1b-3.png`. Fyll inn-knappen finner bildet automatisk. Sluttsvarene som fylles inn
-i svarfeltene, står i tabellen `ANSWERS` øverst i `assets/handskrift/fyll-inn.js`.
+i svarfeltene, står i `assets/handskrift/answers.json`.
+
+## Logaritmesiden
+
+[Logaritmer og KI](logaritmer-ki.qmd) (oppgave 1b, 3b og 3c fra
+matematikkeksamen V24) har egne prompter. En endring der påvirker ikke
+fysikksidene, og omvendt. Sandkassen holdes også atskilt fra
+fysikksandkassen.
+
+| Fil | Styrer |
+|---|---|
+| [`feedback/logaritmer/veileder.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logaritmer/veileder.yml) | **Hvordan** KI-en svarer: en matematikklærer som sjekker hver linje og navngir regelen; policyene `logaritmer` (standard), `logaritmer-med-transkripsjon` og `logaritmer-vurdering` |
+| [`feedback/logaritmer/oppgaver.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logaritmer/oppgaver.yml) | **Hva** KI-en vet om hver oppgave (`v24-1b`, `v24-3b`, `v24-3c`): fasit og typiske feil |
+| `feedback/logarithms/tutor.yml`, `tasks.yml` | Det samme for den engelske siden ([Logarithms and AI](logarithms-ai.qmd)) |
+| `_includes/logaritmer/oppgaver.md` | Oppgaveteksten, svarfeltene med Python-sjekkerne og opplastingsfeltene |
+| `_includes/logaritmer/tests/` | Tester for sjekkerne; `quarto render` stopper hvis en feiler |
+| `assets/logaritmer/student1/` … `student9/`, `answers.json` | De ekte besvarelsene til ni studenter og svarene deres |
+
+Svarfeltene sjekkes av Python (SymPy) i nettleseren. Sjekkeren avgjør mer enn
+riktig eller galt: et svar som er lik det riktige, men ikke så enkelt som
+oppgaven ber om (1b, 3b), eller et desimaltall i stedet for $e$ (3c), får et
+halvt poeng og et hint. Typiske gale svar får målrettede hint, for eksempel en
+manglende derivert av kjernen i 3b. Tekstene i hintene står øverst i hver
+sjekker (`T = {…}`). Endre hintteksten der, ikke logikken, med mindre du
+også oppdaterer testene.
 
 ## YAML-feller
 

@@ -2,10 +2,14 @@
 title: "Freehand AI assessment"
 ---
 
-Students solve physics problems on paper, upload a photo of their working and
-get AI feedback in four steps, from an assessment to a worked solution.
+Students solve problems on paper, upload a photo of their working and get AI
+feedback in four steps, from an assessment to a worked solution. Each problem
+also has an answer field that is checked automatically.
 
-- [Practice exam V2025](pages/handwriting-ai.qmd) (English) ·
+- **Physics:** [Practice exam V2025](pages/handwriting-ai.qmd) (English) ·
   [Prøveeksamen V2025](pages/handskrift-ki.qmd) (bokmål)
+- **Mathematics:** [Logarithms, exam V24](pages/logarithms-ai.qmd) (English) ·
+  [Logaritmer, eksamen V24](pages/logaritmer-ki.qmd) (bokmål)
 - [Playing with the prompts](pages/handwriting-ai-prompts.qmd) (English) ·
-  [Spill med promptene](pages/handskrift-ki-prompter.qmd) (bokmål), for teachers
+  [Spill med promptene](pages/handskrift-ki-prompter.qmd) (bokmål), for teachers.
+  Each exam page has its own prompts.

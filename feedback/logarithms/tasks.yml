@@ -1,0 +1,50 @@
+# Reference solution and typical mistakes for each problem on the Logarithms
+# and AI page (English). The Norwegian page uses feedback/logaritmer/oppgaver.yml.
+#
+# This file controls WHAT the AI knows about each problem. Tone, structure and
+# the hint ladder are in tutor.yml. Both texts go into every request.
+#
+# The key (v24-1b, v24-3b, v24-3c) is the id of the upload field on the page.
+# The text is private to the AI, but it is published in the page source, so
+# do not write anything here that students must not see.
+
+ai-feedback:
+  exercises:
+    plain-text:
+
+      v24-1b:
+        base-prompt: >-
+          Reference: ln b² = 2 ln b and ln √b = ½ ln b. The numerator is
+          a·ln b − 2 ln b = (a − 2)·ln b, the denominator (a − 2)·½ ln b. The
+          common factor (a − 2)·ln b cancels, and the expression equals
+          1/(½) = 2 (for b > 0, b ≠ 1 and a ≠ 2). "As simply as possible"
+          means the number 2. Typical mistakes: splitting the fraction term by
+          term (dividing a·ln b and 2 ln b separately by the two terms of the
+          denominator); writing a·ln b as ln(ab), or a·ln b − ln b² as
+          a·ln(b/b²); stopping at an equivalent but unsimplified form such as
+          (a − 2)/(½a − 1); multiplying only the numerator by 2 in the last
+          step; expanding (a − 2)·ln √b and losing the factor structure.
+
+      v24-3b:
+        base-prompt: >-
+          Reference: chain rule with u = 2x² − 2x⁴ and u′ = 4x − 8x³.
+          g′(x) = ½ · u′/u = ½ · (4x − 8x³)/(2x² − 2x⁴) = (2x − 4x³)/(2x² − 2x⁴).
+          Cancel 2x: g′(x) = (1 − 2x²)/(x − x³) = (1 − 2x²)/(x(1 − x)(1 + x)).
+          Alternative: g(x) = ½ ln 2 + ln|x| + ½ ln(1 − x²) gives
+          1/x − x/(1 − x²), which is the same. The domain is 0 < |x| < 1.
+          Typical mistakes: forgetting the inner derivative, so g′ = ½·1/u;
+          writing u′ alone, so g′ = 2x − 4x³; using the product rule on ½·ln u
+          with a wrong derivative of ln u (1/u′ instead of u′/u); multiplying
+          the function by 2 to remove the ½ (that changes the function);
+          dividing by 2x instead of by the inner function; not cancelling the
+          common factor 2x at the end.
+
+      v24-3c:
+        base-prompt: >-
+          Reference: h(e) = e·ln e = e, so the point is (e, e). Product rule:
+          h′(x) = 1·ln x + x·(1/x) = ln x + 1, so the slope is h′(e) = 2. One-
+          point formula: y − e = 2(x − e), so y = 2x − e. "Exact values" means
+          e, not 2.718…. Typical mistakes: a sign error in the product rule
+          (ln x − 1, slope 0); writing the second term of the product rule as
+          1/x instead of x·(1/x) = 1; arithmetic such as 1 + 1/e = 3/e; using
+          decimal values for e; forgetting to add e when solving for y.
