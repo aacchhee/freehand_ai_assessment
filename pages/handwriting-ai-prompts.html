@@ -547,11 +547,12 @@ A subtask can also get its own settings, for example shorter answers:"><pre clas
 <td>What harder and simpler mean for that subtask, for example “give the spring constant and the compression instead of the launch speed”</td>
 </tr>
 <tr class="odd">
-<td><code>#| context:</code> in the same answer field</td>
-<td>Which problem text the AI gets (the problem’s <code>.ai-context</code> block and the subtask’s own text)</td>
+<td>The text inside the answer field, and <code>#| context:</code></td>
+<td>The subtask’s question is written inside the answer field, so the AI always gets it; <code>#| context:</code> adds the shared introduction of the problem (its <code>.ai-context</code> block)</td>
 </tr>
 </tbody>
 </table>
+<p>Under every exercise on the English pages, <strong>Show Quarto exercise source</strong> opens the exercise as it is written, with its <code>#| harder:</code> and <code>#| simpler:</code>.</p>
 <p>The photo feedback does not use <code>practice.yml</code>, and the generation does not use <code>tutor.yml</code> or <code>tasks.yml</code>. The answer fields also have a <strong>Feedback</strong> button for the typed answer; it uses <code>tutor.yml</code> like the photo feedback. A good direction asks for one more (or one less) reasoning step and keeps the answer fields: the same quantities in the same units. Generation needs a direct API with a reasoning model (Generation model in the settings ⚙).</p>
 </section>
 <section id="the-logarithms-page" class="level2">
