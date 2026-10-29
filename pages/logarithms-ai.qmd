@@ -1,0 +1,23 @@
+---
+title: "Logarithms and AI"
+subtitle: "Exam V24 in mathematics, problems 1b, 3b and 3c: work on paper, upload the photo, get feedback"
+lang: en
+toc: false
+math-exercise:
+  lang: en
+  feedback: false
+ai-feedback:
+  policy-files:
+    - feedback/logarithms/tutor.yml
+    - feedback/logarithms/tasks.yml
+  policy:
+    default: logarithms
+include-after-body:
+  - text: |
+      <script src="../assets/handskrift/js-yaml.min.js"></script>
+      <script src="../assets/handskrift/fyll-inn.js" data-assets="assets/logaritmer/" data-students="9" data-prefix="v24-" data-storage-key="logaritmer" data-feedback-dir="feedback/logarithms/" data-files="tutor.yml,tasks.yml" data-guide="handwriting-ai-prompts.html#the-logarithms-page"></script>
+---
+
+{{< include ../_includes/logarithms/intro.md >}}
+
+{{< include ../_includes/logarithms/problems.md >}}

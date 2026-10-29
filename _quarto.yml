@@ -6,12 +6,15 @@ project:
     - pages/handwriting-ai-prompts.qmd
     - pages/handskrift-ki.qmd
     - pages/handskrift-ki-prompter.qmd
+    - pages/logarithms-ai.qmd
+    - pages/logaritmer-ki.qmd
   # Fetched by the page script (fill-in buttons and prompt sandbox).
   resources:
-    - assets/handskrift/student1/*.png
-    - assets/handskrift/student2/*.png
-    - feedback/handskrift/*.yml
-    - feedback/handwriting/*.yml
+    - assets/handskrift/answers.json
+    - assets/handskrift/student*/*.png
+    - assets/logaritmer/answers.json
+    - assets/logaritmer/student*/*.png
+    - feedback/*/*.yml
 
 lang: en
 
@@ -25,14 +28,20 @@ website:
   sidebar:
     style: docked
     contents:
-      - text: "Practice exam V2025"
+      - text: "Physics: practice exam V2025"
         file: pages/handwriting-ai.qmd
+      - text: "Mathematics: logarithms V24"
+        file: pages/logarithms-ai.qmd
       - text: "Playing with the prompts"
         file: pages/handwriting-ai-prompts.qmd
-      - text: "Prøveeksamen V2025 (bokmål)"
-        file: pages/handskrift-ki.qmd
-      - text: "Spill med promptene (bokmål)"
-        file: pages/handskrift-ki-prompter.qmd
+      - section: "Bokmål"
+        contents:
+          - text: "Fysikk: prøveeksamen V2025"
+            file: pages/handskrift-ki.qmd
+          - text: "Matematikk: logaritmer V24"
+            file: pages/logaritmer-ki.qmd
+          - text: "Spill med promptene"
+            file: pages/handskrift-ki-prompter.qmd
 
 format:
   html:

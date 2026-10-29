@@ -1,6 +1,6 @@
 ---
 title: "Playing with the prompts"
-subtitle: "For teachers: how to change the AI feedback on the Handwriting and AI page"
+subtitle: "For teachers: how to change the AI feedback on the handwriting pages"
 lang: en
 toc: true
 ---
@@ -10,6 +10,10 @@ toc: true
 :::
 
 ## In short
+
+Every exam page has its own prompts. This guide uses the physics page
+([Practice exam V2025](handwriting-ai.qmd)) as the example; everything works
+the same way on [the logarithms page](#the-logarithms-page), with other files.
 
 All text the AI gets from us is in two YAML files in the repository:
 
@@ -211,8 +215,32 @@ published with the page.
 Put a photo in `assets/handskrift/student1/` or `student2/` named after the
 subtask (`1b.png`). If one subtask has several photos, they are called `1b.png`,
 `1b-2.png` and `1b-3.png`. The fill-in button finds the photo automatically, on
-both pages. The final values filled into the answer fields are in the table
-`ANSWERS` at the top of `assets/handskrift/fyll-inn.js`.
+both pages. The final values filled into the answer fields are in
+`assets/handskrift/answers.json`.
+
+## The logarithms page
+
+[Logarithms and AI](logarithms-ai.qmd) (problems 1b, 3b and 3c from the
+mathematics exam V24) has its own prompts. A change there does not affect the
+physics pages, and vice versa. Its sandbox is also kept apart from the physics
+sandbox.
+
+| File | Controls |
+|---|---|
+| [`feedback/logarithms/tutor.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tutor.yml) | **How** the AI answers: a mathematics teacher who checks every line and names the rule; policies `logarithms` (default), `logarithms-with-transcript` and `logarithms-review` |
+| [`feedback/logarithms/tasks.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tasks.yml) | **What** the AI knows about each problem (`v24-1b`, `v24-3b`, `v24-3c`): reference solution and typical mistakes |
+| `feedback/logaritmer/veileder.yml`, `oppgaver.yml` | The same for the Norwegian page ([Logaritmer og KI](logaritmer-ki.qmd)) |
+| `_includes/logarithms/problems.md` | The problem text, the answer fields with their Python checkers and the upload fields |
+| `_includes/logaritmer/tests/` | Tests for the checkers; `quarto render` stops if one fails |
+| `assets/logaritmer/student1/` … `student9/`, `answers.json` | The real answers of nine students and their final answers |
+
+The answer fields are checked by Python (SymPy) in the browser. The checker
+decides more than right or wrong: an answer that is equal to the right one but
+not as simple as the problem asks (1b, 3b), or a decimal number instead of
+$e$ (3c), gets half a point and a hint. Typical wrong answers get targeted
+hints, for example a missing inner derivative in 3b. The texts of these hints
+are at the top of each checker (`T = {…}`). Change the hint text there, not
+the logic, unless you also update the tests.
 
 ## YAML pitfalls
 

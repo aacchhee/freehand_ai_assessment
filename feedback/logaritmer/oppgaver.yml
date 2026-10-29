@@ -1,0 +1,50 @@
+# Fasit og typiske feil for hver oppgave på siden Logaritmer og KI (bokmål).
+# Den engelske siden bruker feedback/logarithms/tasks.yml.
+#
+# Denne filen styrer HVA KI-en vet om hver oppgave. Tone, struktur og
+# hintstigen står i veileder.yml. Begge tekstene går inn i hver forespørsel.
+#
+# Nøkkelen (v24-1b, v24-3b, v24-3c) er id-en til opplastingsfeltet på siden.
+# Teksten er privat for KI-en, men den publiseres i kildekoden til siden, så
+# ikke skriv noe her som studentene ikke må se.
+
+ai-feedback:
+  exercises:
+    plain-text:
+
+      v24-1b:
+        base-prompt: >-
+          Fasit: ln b² = 2 ln b og ln √b = ½ ln b. Telleren er
+          a·ln b − 2 ln b = (a − 2)·ln b, nevneren (a − 2)·½ ln b. Fellesfaktoren
+          (a − 2)·ln b forkortes, og uttrykket er lik 1/(½) = 2 (for b > 0,
+          b ≠ 1 og a ≠ 2). «Så enkelt som mulig» betyr tallet 2. Typiske feil:
+          å dele brøken ledd for ledd (dele a·ln b og 2 ln b hver for seg på de
+          to leddene i nevneren); å skrive a·ln b som ln(ab), eller
+          a·ln b − ln b² som a·ln(b/b²); å stoppe ved en likeverdig, men ikke
+          forenklet form som (a − 2)/(½a − 1); å gange bare telleren med 2 i
+          siste steg; å gange ut (a − 2)·ln √b og miste faktorstrukturen.
+
+      v24-3b:
+        base-prompt: >-
+          Fasit: kjerneregelen med u = 2x² − 2x⁴ og u′ = 4x − 8x³.
+          g′(x) = ½ · u′/u = ½ · (4x − 8x³)/(2x² − 2x⁴) = (2x − 4x³)/(2x² − 2x⁴).
+          Forkort med 2x: g′(x) = (1 − 2x²)/(x − x³) = (1 − 2x²)/(x(1 − x)(1 + x)).
+          Alternativt: g(x) = ½ ln 2 + ln|x| + ½ ln(1 − x²) gir
+          1/x − x/(1 − x²), som er det samme. Definisjonsmengden er
+          0 < |x| < 1. Typiske feil: å glemme den deriverte av kjernen, så
+          g′ = ½·1/u; å skrive bare u′, så g′ = 2x − 4x³; å bruke
+          produktregelen på ½·ln u med feil derivert av ln u (1/u′ i stedet for
+          u′/u); å gange funksjonen med 2 for å bli kvitt ½ (det endrer
+          funksjonen); å dele på 2x i stedet for på kjernen; å ikke forkorte
+          fellesfaktoren 2x til slutt.
+
+      v24-3c:
+        base-prompt: >-
+          Fasit: h(e) = e·ln e = e, så punktet er (e, e). Produktregelen:
+          h′(x) = 1·ln x + x·(1/x) = ln x + 1, så stigningstallet er
+          h′(e) = 2. Ettpunktsformelen: y − e = 2(x − e), så y = 2x − e.
+          «Eksakte verdier» betyr e, ikke 2,718…. Typiske feil: fortegnsfeil i
+          produktregelen (ln x − 1, stigningstall 0); å skrive andre ledd i
+          produktregelen som 1/x i stedet for x·(1/x) = 1; regnefeil som
+          1 + 1/e = 3/e; desimalverdier for e; å glemme å legge til e når y
+          løses ut.
