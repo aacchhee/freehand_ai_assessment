@@ -24,6 +24,8 @@ ai-feedback:
         given value in the text: the student does not see a figure. Ask for
         exactly the quantities of the original answer fields, in the same order
         and the same units, so the same fields and the same tolerance apply.
+        Give each answer as unrounded arithmetic in the given values (for
+        example 8.0/9.81 or 0.5*4180*56/1500), without a recipe.
       harder: >-
         Add one natural reasoning step, as the exercise's "harder" direction
         describes. Do not add more than one new idea.

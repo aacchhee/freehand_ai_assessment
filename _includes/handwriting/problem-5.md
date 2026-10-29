@@ -16,7 +16,7 @@ Use these values to calculate the volume of the block.
 #| tolerance: 2%
 #| context: v25-oppg5
 #| harder: Give the fraction of the block above the surface instead of below, and the density in g/cm³.
-#| simpler: Give the density in kg/m³ and ask for the volume of the block below the surface.
+#| simpler: Give the volume of the block below the surface in dm³ instead of the mass and the density, so only the fraction below the surface is needed.
 
 $V=$ __[0.450/(0.8*0.87)] dm³
 ```

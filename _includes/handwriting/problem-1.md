@@ -46,7 +46,7 @@ ball's potential energy during the first second?
 #| mode: numeric
 #| tolerance: 2%
 #| context: v25-oppg1
-#| harder: Ask for the change after a time when the ball is below the launch point, so the change is negative and the sign matters. Give the mass in grams.
+#| harder: Ask for the change after a time when the ball is below the launch point, so the change is negative and the sign matters.
 #| simpler: Ask for the change between the launch and the highest point, and give the mass in kilograms.
 
 $\Delta E_p=$ __[0.450*9.81*(6.0-9.81/2)] J

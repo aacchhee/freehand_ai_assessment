@@ -64,7 +64,7 @@ the ball is $480\,\mathrm{mJ}$?
 #| mode: numeric
 #| tolerance: 2%
 #| context: v25-oppg4
-#| harder: Ask for the vertical velocity at a stated height below the table top without giving the kinetic energy.
+#| harder: Give the spring constant and the compression instead of the launch speed, so the horizontal speed must be found from the spring energy before the vertical velocity.
 #| simpler: Ask for the vertical velocity just before the ball hits the ground.
 
 $v_y=$ __[sqrt(2*0.48/0.057-9)] m/s
