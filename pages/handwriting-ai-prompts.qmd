@@ -250,7 +250,8 @@ sandbox.
 | [`feedback/logarithms/tutor.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tutor.yml) | **How** the AI answers: a mathematics teacher who checks every line and names the rule; policies `logarithms` (default), `logarithms-with-transcript` and `logarithms-review` |
 | [`feedback/logarithms/tasks.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/tasks.yml) | **What** the AI knows about each problem (`v24-1b`, `v24-3b`, `v24-3c`): reference solution and typical mistakes |
 | `feedback/logaritmer/veileder.yml`, `oppgaver.yml` | The same for the Norwegian page ([Logaritmer og KI](logaritmer-ki.qmd)) |
-| `_includes/logarithms/problems.md` | The problem text, the answer fields with their Python checkers and the upload fields |
+| [`feedback/logarithms/practice.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/logarithms/practice.yml) | Similar problems on the English page: policy `logarithms-practice` |
+| `_includes/logarithms/problems.md` | The problem text, the answer fields with their Python checkers and the upload fields; each field's `#| givens:` (the expression, function or point the checker reads), `#| similar-data:` (which givens a similar problem may change) and `#| harder:` / `#| simpler:` |
 | `_includes/logaritmer/tests/` | Tests for the checkers; `quarto render` stops if one fails |
 | `assets/logaritmer/student1/` … `student9/`, `answers.json` | The real answers of nine students and their final answers |
 
@@ -261,6 +262,11 @@ $e$ (3c), gets half a point and a hint. Typical wrong answers get targeted
 hints, for example a missing inner derivative in 3b. The texts of these hints
 are at the top of each checker (`T = {…}`). Change the hint text there, not
 the logic, unless you also update the tests.
+
+On the English page the checkers read their givens instead of fixed answers.
+**Similar problem** lets the AI choose new givens (a new expression in 1b, a new
+function in 3b, a new function and point in 3c); the same checker, with the same
+half credit and hints, grades the new problem.
 
 ## YAML pitfalls
 
