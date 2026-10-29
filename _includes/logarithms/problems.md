@@ -1,18 +1,10 @@
 ## Problem 1b: Simplifying
 
-::: {#v24-oppg1b .ai-context}
-Write as simply as possible:
-
-$$\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}$$
-:::
-
 ```{math-exercise}
 #| label: v24-1b-svar
-#| caption: 1b · Final answer
 #| vars: a, b
 #| field-labels: Simplified expression
 #| mode: custom
-#| context: v24-oppg1b
 #| givens: |
 #|   expr = (a*log(b) - log(b**2))/((a - 2)*log(sqrt(b)))
 #| similar-data: expr
@@ -65,28 +57,24 @@ $$\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}$$
 #|     answers: [raw("5/2*ln(b)")]
 #|     expect: wrong
 
+Write as simply as possible:
+
+$$\frac{a\cdot\ln b-\ln b^2}{(a-2)\cdot\ln\sqrt{b}}$$
+
 Simplified expression: __[2]
 ```
 
-::: {.ai-feedback #v24-1b profile="mathematics" image-upload="true" image-role="response" context="v24-oppg1b" reset-on-variant="v24-1b-fyll"}
+::: {.ai-feedback #v24-1b profile="mathematics" image-upload="true" image-role="response" context="v24-1b-svar-question" reset-on-variant="v24-1b-fyll"}
 **Show your working for 1b.** Upload a photo of what you wrote on paper.
 :::
 
 ## Problem 3b: Derivative
 
-::: {#v24-oppg3b .ai-context}
-Differentiate the function and simplify the answer as far as possible.
-
-$$g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)$$
-:::
-
 ```{math-exercise}
 #| label: v24-3b-svar
-#| caption: 3b · Final answer
 #| vars: x
 #| field-labels: Derivative
 #| mode: custom
-#| context: v24-oppg3b
 #| givens: |
 #|   g = log(2*x**2 - 2*x**4)/2
 #| similar-data: g
@@ -160,30 +148,24 @@ $$g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)$$
 #|     answers: [raw("1/(4x^2-4x^4)")]
 #|     expect: wrong
 
+Differentiate the function and simplify the answer as far as possible.
+
+$$g(x)=\frac{1}{2}\ln\left(2x^2-2x^4\right)$$
+
 $g'(x)=$ __[(1-2*x^2)/(x-x^3)]
 ```
 
-::: {.ai-feedback #v24-3b profile="mathematics" image-upload="true" image-role="response" context="v24-oppg3b" reset-on-variant="v24-3b-fyll"}
+::: {.ai-feedback #v24-3b profile="mathematics" image-upload="true" image-role="response" context="v24-3b-svar-question" reset-on-variant="v24-3b-fyll"}
 **Show your working for 3b.** Upload a photo of what you wrote on paper.
 :::
 
 ## Problem 3c: Tangent
 
-::: {#v24-oppg3c .ai-context}
-Find the equation of the tangent to the function
-
-$$h(x)=x\ln x$$
-
-through the point $\left(e,h(e)\right)$. Give the answer with exact values.
-:::
-
 ```{math-exercise}
 #| label: v24-3c-svar
-#| caption: 3c · Final answer
 #| vars: x, e
 #| field-labels: Tangent
 #| mode: custom
-#| context: v24-oppg3c
 #| givens: |
 #|   h = x*log(x)
 #|   x0 = E
@@ -235,9 +217,15 @@ through the point $\left(e,h(e)\right)$. Give the answer with exact values.
 #|     answers: [raw("e")]
 #|     expect: wrong
 
+Find the equation of the tangent to the function
+
+$$h(x)=x\ln x$$
+
+through the point $\left(e,h(e)\right)$. Give the answer with exact values.
+
 $y=$ __[2*x-E]
 ```
 
-::: {.ai-feedback #v24-3c profile="mathematics" image-upload="true" image-role="response" context="v24-oppg3c" reset-on-variant="v24-3c-fyll"}
+::: {.ai-feedback #v24-3c profile="mathematics" image-upload="true" image-role="response" context="v24-3c-svar-question" reset-on-variant="v24-3c-fyll"}
 **Show your working for 3c.** Upload a photo of what you wrote on paper.
 :::

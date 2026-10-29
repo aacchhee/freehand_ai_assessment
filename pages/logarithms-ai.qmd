@@ -3,6 +3,8 @@ title: "Logarithms and AI"
 subtitle: "Exam V24 in mathematics, problems 1b, 3b and 3c: work on paper, upload the photo, get feedback"
 lang: en
 toc: false
+# Collapsed Quarto source after each exercise (_filters/example-source.lua).
+example-source: true
 math-exercise:
   lang: en
 ai-feedback:

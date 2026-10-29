@@ -229,7 +229,10 @@ places control what it writes:
 |---|---|
 | [`feedback/handwriting/practice.yml`](https://github.com/aacchhee/freehand_ai_assessment/blob/main/feedback/handwriting/practice.yml), policy `physics-practice` | The common rules for every generated problem (realistic values, SI units, the same quantities as the original), and what *harder*, *easier* and *same* mean in general |
 | `#| harder:` and `#| simpler:` in each answer field in `_includes/handwriting/problem-N.md` | What harder and simpler mean for that subtask, for example “give the spring constant and the compression instead of the launch speed” |
-| `#| context:` in the same answer field | Which problem text the AI gets (the problem's `.ai-context` block and the subtask's own text) |
+| The text inside the answer field, and `#| context:` | The subtask's question is written inside the answer field, so the AI always gets it; `#| context:` adds the shared introduction of the problem (its `.ai-context` block) |
+
+Under every exercise on the English pages, **Show Quarto exercise source**
+opens the exercise as it is written, with its `#| harder:` and `#| simpler:`.
 
 The photo feedback does not use `practice.yml`, and the generation does not use
 `tutor.yml` or `tasks.yml`. The answer fields also have a **Feedback** button
