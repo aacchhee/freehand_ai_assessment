@@ -3,6 +3,8 @@ title: "Handwriting and AI"
 subtitle: "Practice exam V2025 in physics: work on paper, upload the photo, get feedback"
 lang: en
 toc: false
+# Collapsed Quarto source after each exercise (_filters/example-source.lua).
+example-source: true
 math-exercise:
   lang: en
 ai-feedback:

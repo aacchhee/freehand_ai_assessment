@@ -10,11 +10,8 @@ $3.00\,\mathrm{m/s}$.
 
 ### a) The spring constant
 
-How large is the spring constant?
-
 ```{math-exercise}
 #| label: v25-4a-svar
-#| caption: a · Final answer
 #| field-labels: Spring constant in N/m
 #| mode: numeric
 #| tolerance: 2%
@@ -22,22 +19,19 @@ How large is the spring constant?
 #| harder: Make the spring vertical — it launches the ball straight up, and the spring energy becomes both kinetic and potential energy over the compression.
 #| simpler: Give the force needed to hold the spring compressed, so Hooke's law gives the spring constant directly.
 
+How large is the spring constant?
+
 $k=$ __[0.057*3**2/0.05**2] N/m
 ```
 
-::: {.ai-feedback #v25-4a profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4" reset-on-variant="v25-4a-fyll"}
+::: {.ai-feedback #v25-4a profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4,v25-4a-svar-question" reset-on-variant="v25-4a-fyll"}
 **Show your working for a).** Upload a photo of what you wrote on paper.
 :::
 
 ### b) Horizontal distance
 
-Assume that the ball rolls without change of speed from leaving the spring
-until it reaches the edge of the table. How far does the ball move
-horizontally from the edge of the table until it lands?
-
 ```{math-exercise}
 #| label: v25-4b-svar
-#| caption: b · Final answer
 #| field-labels: Horizontal distance in m
 #| mode: numeric
 #| tolerance: 2%
@@ -45,21 +39,19 @@ horizontally from the edge of the table until it lands?
 #| harder: Give the spring constant and the compression instead of the launch speed, so the speed must be found from energy conservation first.
 #| simpler: Give the time of fall instead of the table height.
 
+Assume that the ball rolls without change of speed from leaving the spring until it reaches the edge of the table. How far does the ball move horizontally from the edge of the table until it lands?
+
 $x=$ __[3*sqrt(2*1.4/9.81)] m
 ```
 
-::: {.ai-feedback #v25-4b profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4" reset-on-variant="v25-4b-fyll"}
+::: {.ai-feedback #v25-4b profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4,v25-4b-svar-question" reset-on-variant="v25-4b-fyll"}
 **Show your working for b).** Upload a photo of what you wrote on paper.
 :::
 
 ### c) Vertical velocity
 
-How large is the velocity in the vertical direction when the kinetic energy of
-the ball is $480\,\mathrm{mJ}$?
-
 ```{math-exercise}
 #| label: v25-4c-svar
-#| caption: c · Final answer
 #| field-labels: Vertical velocity in m/s
 #| mode: numeric
 #| tolerance: 2%
@@ -67,9 +59,11 @@ the ball is $480\,\mathrm{mJ}$?
 #| harder: Give the spring constant and the compression instead of the launch speed, so the horizontal speed must be found from the spring energy before the vertical velocity.
 #| simpler: Ask for the vertical velocity just before the ball hits the ground.
 
+How large is the velocity in the vertical direction when the kinetic energy of the ball is $480\,\mathrm{mJ}$?
+
 $v_y=$ __[sqrt(2*0.48/0.057-9)] m/s
 ```
 
-::: {.ai-feedback #v25-4c profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4" reset-on-variant="v25-4c-fyll"}
+::: {.ai-feedback #v25-4c profile="mathematics" image-upload="true" image-role="response" context="v25-oppg4,v25-4c-svar-question" reset-on-variant="v25-4c-fyll"}
 **Show your working for c).** Upload a photo of what you wrote on paper.
 :::

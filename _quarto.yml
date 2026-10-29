@@ -21,6 +21,7 @@ lang: en
 filters:
   - path: _extensions/ctm-assessment/tab-ids.lua
     at: pre-ast
+  - _filters/example-source.lua
   - ctm-assessment
 
 website:

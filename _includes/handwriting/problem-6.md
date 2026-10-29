@@ -6,11 +6,8 @@ voltage of $230\,\mathrm{V}$. The voltage across $R_1$ is
 $U_1=150\,\mathrm{V}$, and the current is $10\,\mathrm{A}$.
 :::
 
-How large is the resistance $R_2$?
-
 ```{math-exercise}
 #| label: v25-6a-svar
-#| caption: a · Final answer
 #| field-labels: Resistance R2 in ohm
 #| mode: numeric
 #| tolerance: 2%
@@ -18,10 +15,12 @@ How large is the resistance $R_2$?
 #| harder: Give the total power from the source and the voltage across R1 instead of the current.
 #| simpler: Give the voltage across R2 and the current.
 
+How large is the resistance $R_2$?
+
 $R_2=$ __[(230-150)/10] Ω
 ```
 
-::: {.ai-feedback #v25-6a profile="mathematics" image-upload="true" image-role="response" context="v25-oppg6a" reset-on-variant="v25-6a-fyll"}
+::: {.ai-feedback #v25-6a profile="mathematics" image-upload="true" image-role="response" context="v25-oppg6a,v25-6a-svar-question" reset-on-variant="v25-6a-fyll"}
 **Show your working for a).** Upload a photo of what you wrote on paper.
 :::
 
@@ -32,13 +31,8 @@ The resistor $R_1$ in the circuit in a) is used to heat water. (In a),
 $U_1=150\,\mathrm{V}$ and the current is $10\,\mathrm{A}$.)
 :::
 
-How long does it take to heat $5.0\,\mathrm{dl}$ of water from
-$4.0\,^\circ\mathrm{C}$ to $60.0\,^\circ\mathrm{C}$? Assume that no heat goes to
-the surroundings.
-
 ```{math-exercise}
 #| label: v25-6b-svar
-#| caption: b · Final answer
 #| field-labels: Time in s
 #| mode: numeric
 #| tolerance: 2%
@@ -46,10 +40,12 @@ the surroundings.
 #| harder: Say that only a stated percentage of the electric energy heats the water, and give the amount of water as a volume in litres.
 #| simpler: Give the heating power in W and the mass of water in kg.
 
+How long does it take to heat $5.0\,\mathrm{dl}$ of water from $4.0\,^\circ\mathrm{C}$ to $60.0\,^\circ\mathrm{C}$? Assume that no heat goes to the surroundings.
+
 $t=$ __[0.5*4180*56/1500] s
 ```
 
-::: {.ai-feedback #v25-6b profile="mathematics" image-upload="true" image-role="response" context="v25-oppg6b" reset-on-variant="v25-6b-fyll"}
+::: {.ai-feedback #v25-6b profile="mathematics" image-upload="true" image-role="response" context="v25-oppg6b,v25-6b-svar-question" reset-on-variant="v25-6b-fyll"}
 **Show your working for b).** Upload a photo of what you wrote on paper.
 :::
 
