@@ -1,0 +1,43 @@
+---
+title: "Logarithms and AI, with corrections"
+subtitle: "Exam V24 in mathematics, problems 1b, 3b and 3c: work on paper, upload the photo, get feedback and correct a misreading"
+lang: en
+toc: false
+# Collapsed Quarto source after each exercise (_filters/example-source.lua).
+example-source: true
+# Adds corrections="true" to the image activities (_filters/image-corrections.lua).
+image-corrections: true
+math-exercise:
+  lang: en
+ai-feedback:
+  similar: true
+  policy-files:
+    - feedback/logarithms/practice.yml
+    - feedback/logarithms/tutor.yml
+    - feedback/logarithms/tasks.yml
+  policy:
+    default: logarithms
+  generation-policy:
+    default: logarithms-practice
+include-after-body:
+  - text: |
+      <script src="../assets/handskrift/js-yaml.min.js"></script>
+      <script src="../assets/handskrift/fyll-inn.js" data-assets="assets/logaritmer/" data-students="9" data-prefix="v24-" data-storage-key="logaritmer" data-feedback-dir="feedback/logarithms/" data-files="tutor.yml,tasks.yml" data-guide="handwriting-ai-prompts.html#the-logarithms-page"></script>
+---
+
+::: {.callout-tip}
+## Correct the AI when it misreads your work
+
+This page is the [logarithms page](logarithms-ai.qmd) with one addition. If the
+AI misreads or misunderstands your uploaded work, choose **The AI misunderstood
+my work** below its feedback. Point to the line or detail it missed, for example
+“In line 2 the exponent is 2, not 3.” The AI checks your clarification against
+the photo and gives one corrected reply, and the hints restart at level 1. Later
+hints keep your clarification. To have changed or additional work assessed,
+upload a new photo. The correction is available with direct API feedback, not
+with “copy prompt”.
+:::
+
+{{< include ../_includes/logarithms/intro.md >}}
+
+{{< include ../_includes/logarithms/problems.md >}}

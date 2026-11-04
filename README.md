@@ -10,6 +10,7 @@ German).
 |---|---|---|
 | Physics, *Prøveeksamen V2025* | `pages/handwriting-ai.qmd` | `pages/handskrift-ki.qmd` |
 | Mathematics, logarithms from exam V24 (1b, 3b, 3c) | `pages/logarithms-ai.qmd` | `pages/logaritmer-ki.qmd` |
+| The same logarithms page with corrections | `pages/logarithms-corrections.qmd` | |
 | Guide for teachers | `pages/handwriting-ai-prompts.qmd` | `pages/handskrift-ki-prompter.qmd` |
 
 Each exam page has its own prompts, YAML files that teachers can edit:
@@ -22,6 +23,12 @@ Each exam page has its own prompts, YAML files that teachers can edit:
 The answer fields of the logarithms page use Python checkers (in
 `_includes/logarithms/problems.md` and `_includes/logaritmer/oppgaver.md`) with
 tests in `_includes/logaritmer/tests/` that `quarto render` runs.
+
+The corrections page reuses the logarithms includes and sets
+`image-corrections: true`; `_filters/image-corrections.lua` then adds
+`corrections="true"` to its image activities. After direct API feedback, a
+student can point out one misreading of the photo and get one corrected reply,
+which restarts the hints at level 1; changed work needs a new upload.
 
 The guide pages explain how to edit them, and the prompt sandbox at the bottom
 of each exam page tries changes in the browser without rebuilding the site.
