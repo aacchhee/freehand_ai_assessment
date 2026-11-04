@@ -7,6 +7,7 @@ project:
     - pages/handskrift-ki.qmd
     - pages/handskrift-ki-prompter.qmd
     - pages/logarithms-ai.qmd
+    - pages/logarithms-corrections.qmd
     - pages/logaritmer-ki.qmd
   # Fetched by the page script (fill-in buttons and prompt sandbox).
   resources:
@@ -21,6 +22,7 @@ lang: en
 filters:
   - path: _extensions/ctm-assessment/tab-ids.lua
     at: pre-ast
+  - _filters/image-corrections.lua
   - _filters/example-source.lua
   - ctm-assessment
 
@@ -33,6 +35,8 @@ website:
         file: pages/handwriting-ai.qmd
       - text: "Mathematics: logarithms V24"
         file: pages/logarithms-ai.qmd
+      - text: "Logarithms V24, with corrections"
+        file: pages/logarithms-corrections.qmd
       - text: "Playing with the prompts"
         file: pages/handwriting-ai-prompts.qmd
       - section: "Bokmål"
